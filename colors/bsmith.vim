@@ -1,7 +1,7 @@
 " Vim colorscheme file
 " Bradford Smith
 " bsmith.vim
-" updated: 11/25/2015
+" updated: 12/02/2015
 "=====================
 
 "TODO: maybe add 16/8-color terminal support
@@ -254,7 +254,7 @@ exe "hi StatusLineNC" . s:mfg . s:black . s:mbg . s:light_grey
 exe "hi Tabline" . s:u . s:mfg . s:black . s:mbg . s:white
 exe "hi TablineSel" . s:b
 exe "hi TabLineFill" . s:r
-exe "hi WildMenu" . s:mfg . s:light_lime . s:mbg . s:grey
+exe "hi WildMenu" . s:mfg . s:lime . s:mbg . s:grey
 exe "hi Folded" . s:mfg . s:pale_blue . s:mbg . s:black
 hi link FoldColumn Folded
 exe "hi PMenu" . s:mfg . s:light_lime . s:mbg . s:light_grey
@@ -299,7 +299,7 @@ if &background == "dark"
 else
     exe "hi TODO" . s:b . s:mfg . s:black . s:mbg . s:yellow
 endif
-exe "hi NonText" . s:mfg . s:grey
+exe "hi NonText" . s:mfg . s:light_grey
 hi link Ignore NonText
 exe "hi Conceal" s:mfg . s:white . s:mbg . s:light_grey
 "}}}
