@@ -78,6 +78,9 @@ hi clear SyntasticError
 hi clear SyntasticWarning
 hi clear SyntasticStyleError
 hi clear SyntasticStyleWarning
+hi clear QuickScopePrimay
+hi clear QuickScopeSecondary
+hi clear QuickScopeCursor
 
 hi clear DiffAdd
 hi clear DiffChange
@@ -278,6 +281,9 @@ hi link SyntasticError SpellBad
 hi link SyntasticWarning WarningMsg
 hi link SyntasticStyleError SyntasticError
 hi link SyntasticStyleWarning SyntasticWarning
+exe "hi QuickScopePrimay" . s:u . s:mfg . s:light_blue . s:mbg . s:highlight
+exe "hi QuickScopeSecondary" . s:u . s:mfg . s:pink . s:mbg . s:highlight
+hi link QuickScopeCursor Cursor
 "}}}
 
 "{{{-vimdiff colors
