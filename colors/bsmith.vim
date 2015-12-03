@@ -1,7 +1,7 @@
 " Vim colorscheme file
 " Bradford Smith
 " bsmith.vim
-" updated: 12/02/2015
+" updated: 12/03/2015
 "=====================
 
 "TODO: maybe add 16/8-color terminal support
@@ -19,13 +19,9 @@ let g:colors_name = "bsmith"
 
 "use my custom airline theme too, if it is present
 if &background == "dark"
-    if filereadable(glob("~/.vim/autoload/airline/themes/bsmith_dark.vim"))
-        let g:airline_theme = "bsmith_dark"
-    endif
+    let g:airline_theme = "bsmith_dark"
 else
-    if filereadable(glob("~/.vim/autoload/airline/themes/bsmith_light.vim"))
-        let g:airline_theme = "bsmith_light"
-    endif
+    let g:airline_theme = "bsmith_light"
 endif
 "}}}===========================================================================
 
