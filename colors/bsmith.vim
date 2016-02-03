@@ -273,6 +273,75 @@ elseif &t_Co == 256
     endif "end if background dark/light
     "}}}
 "}}}
+"{{{t_Co == 16
+elseif &t_Co == 16
+    "{{{black/white
+    let s:black = '0 '
+    let s:white = '15 '
+    "}}}
+    "{{{blues
+    let s:blue      = '4 '
+    "light blue is set in dark/light section
+    let s:pale_blue = '12 '
+    let s:cyan      = '6 '
+    "}}}
+    "{{{greens
+    let s:green      = '2 '
+    "bright green is set in dark/light section
+    let s:pale_green = '10 '
+    let s:lime       = s:pale_green
+    let s:light_lime = s:pale_green
+    "}}}
+    "{{{greys
+    let s:grey       = '8 '
+    let s:light_grey = s:grey
+    "}}}
+    "{{{oranges
+    let s:orange      = '11 '
+    let s:dark_orange = '3 '
+    "}}}
+    "{{{pinks
+    let s:pink       = '5 '
+    let s:light_pink = '13 '
+    "}}}
+    "{{{purples
+    let s:purple        = s:pink
+    let s:bright_purple = s:light_pink
+    let s:light_purple  = s:light_pink
+    "}}}
+    "{{{reds
+    let s:red        = '9 '
+    let s:bright_red = '1 '
+    let s:dark_red   = s:red
+    let s:pale_red   = s:dark_red
+    "}}}
+    "{{{yellows
+    let s:yellow       = s:dark_orange
+    let s:light_yellow = s:orange
+    "}}}
+
+    "{{{-dark/light colors
+    if &background == "dark" "dark theme colors
+        let s:bg           = s:black
+        let s:fg           = '7 '
+        let s:cursor       = s:white
+        let s:highlight    = s:grey
+        let s:light_blue   = '14 '
+        let s:warn         = s:yellow
+        let s:bright_green = s:lime
+        let s:special_key  = s:lime
+    else "light theme colors
+        let s:bg           = '7 '
+        let s:fg           = s:black
+        let s:cursor       = s:black
+        let s:highlight    = s:white
+        let s:light_blue   = '14 '
+        let s:warn         = s:bright_purple
+        let s:bright_green = s:lime
+        let s:special_key  = s:bright_green
+    endif "end if background dark/light
+    "}}}
+"}}}
 "{{{term
 else
     "{{{black/white
