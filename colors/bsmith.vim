@@ -1,12 +1,9 @@
 " Vim colorscheme file
 " Bradford Smith
 " bsmith.vim
-" updated: 12/03/2015
+" updated: 02/03/2016
 "=====================
 
-"TODO: maybe add 16/8-color terminal support
-"TODO: maybe add non-color terminal support
-"TODO: add GVim support
 
 "{{{--required colorscheme lines ==============================================
 hi clear
@@ -138,71 +135,213 @@ let s:u = s:m . "=underline" "mode unerline statement
 "}}}===========================================================================
 
 "{{{--define colors ===========================================================
-"{{{black/white
-let s:black = '16 '
-let s:white = '253 '
-"}}}
-"{{{blues
-let s:blue      = '21 '
-"light blue is set in dark/light section
-let s:pale_blue = '67 '
-let s:cyan      = '6 '
-"}}}
-"{{{greens
-let s:green      = '28 '
-"bright green is set in dark/light section
-let s:pale_green = '193 '
-let s:lime       = '118 '
-let s:light_lime = '156 '
-"}}}
-"{{{greys
-let s:grey       = '238 '
-let s:light_grey = '243 '
-"}}}
-"{{{oranges
-let s:orange      = '208 '
-let s:dark_orange = '202 '
-"}}}
-"{{{pinks
-let s:pink       = '161 '
-let s:light_pink = '219 '
-"}}}
-"{{{purples
-let s:purple        = '91 '
-let s:bright_purple = '165 '
-let s:light_purple  = '133 '
-"}}}
-"{{{reds
-let s:red        = '160 '
-let s:bright_red = '196 '
-let s:dark_red   = '52 '
-let s:pale_red   = '174 '
-"}}}
-"{{{yellows
-let s:yellow       = '226 '
-let s:light_yellow = '228 '
-"}}}
+"{{{gui
+if (has('gui_running'))
+    "{{{black/white
+    let s:black = ''
+    let s:white = ''
+    "}}}
+    "{{{blues
+    let s:blue      = ''
+    "light blue is set in dark/light section
+    let s:pale_blue = ''
+    let s:cyan      = ''
+    "}}}
+    "{{{greens
+    let s:green      = ''
+    "bright green is set in dark/light section
+    let s:pale_green = ''
+    let s:lime       = ''
+    let s:light_lime = ''
+    "}}}
+    "{{{greys
+    let s:grey       = ''
+    let s:light_grey = ''
+    "}}}
+    "{{{oranges
+    let s:orange      = ''
+    let s:dark_orange = ''
+    "}}}
+    "{{{pinks
+    let s:pink       = ''
+    let s:light_pink = ''
+    "}}}
+    "{{{purples
+    let s:purple        = ''
+    let s:bright_purple = ''
+    let s:light_purple  = ''
+    "}}}
+    "{{{reds
+    let s:red        = ''
+    let s:bright_red = ''
+    let s:dark_red   = ''
+    let s:pale_red   = ''
+    "}}}
+    "{{{yellows
+    let s:yellow       = ''
+    let s:light_yellow = ''
+    "}}}
 
-"{{{-dark/light colors
-if &background == "dark" "dark theme colors
-    let s:bg           = '233 '
-    let s:fg           = '252 '
-    let s:cursor       = s:white
-    let s:highlight    = '236 '
-    let s:light_blue   = '81 '
-    let s:warn         = s:yellow
-    let s:bright_green = '112 '
-    let s:special_key  = '120 '
-else "light theme colors
-    let s:bg           = '230 '
-    let s:fg           = s:black
-    let s:cursor       = s:black
-    let s:highlight    = s:white
-    let s:light_blue   = '75 '
-    let s:warn         = s:bright_purple
-    let s:bright_green = '34 '
-    let s:special_key  = s:bright_green
-endif "end if background dark/light
+    "{{{-dark/light colors
+    if &background == "dark" "dark theme colors
+        let s:bg           = ''
+        let s:fg           = ''
+        let s:cursor       = s:white
+        let s:highlight    = ''
+        let s:light_blue   = ''
+        let s:warn         = s:yellow
+        let s:bright_green = ''
+        let s:special_key  = ''
+    else "light theme colors
+        let s:bg           = ''
+        let s:fg           = s:black
+        let s:cursor       = s:black
+        let s:highlight    = s:white
+        let s:light_blue   = ''
+        let s:warn         = s:bright_purple
+        let s:bright_green = ''
+        let s:special_key  = s:bright_green
+    endif "end if background dark/light
+    "}}}
+"}}}
+"{{{t_Co == 256
+elseif &t_Co == 256
+    "{{{black/white
+    let s:black = '16 '
+    let s:white = '253 '
+    "}}}
+    "{{{blues
+    let s:blue      = '21 '
+    "light blue is set in dark/light section
+    let s:pale_blue = '67 '
+    let s:cyan      = '6 '
+    "}}}
+    "{{{greens
+    let s:green      = '28 '
+    "bright green is set in dark/light section
+    let s:pale_green = '193 '
+    let s:lime       = '118 '
+    let s:light_lime = '156 '
+    "}}}
+    "{{{greys
+    let s:grey       = '238 '
+    let s:light_grey = '243 '
+    "}}}
+    "{{{oranges
+    let s:orange      = '208 '
+    let s:dark_orange = '202 '
+    "}}}
+    "{{{pinks
+    let s:pink       = '161 '
+    let s:light_pink = '219 '
+    "}}}
+    "{{{purples
+    let s:purple        = '91 '
+    let s:bright_purple = '165 '
+    let s:light_purple  = '133 '
+    "}}}
+    "{{{reds
+    let s:red        = '160 '
+    let s:bright_red = '196 '
+    let s:dark_red   = '52 '
+    let s:pale_red   = '174 '
+    "}}}
+    "{{{yellows
+    let s:yellow       = '226 '
+    let s:light_yellow = '228 '
+    "}}}
+
+    "{{{-dark/light colors
+    if &background == "dark" "dark theme colors
+        let s:bg           = '233 '
+        let s:fg           = '252 '
+        let s:cursor       = s:white
+        let s:highlight    = '236 '
+        let s:light_blue   = '81 '
+        let s:warn         = s:yellow
+        let s:bright_green = '112 '
+        let s:special_key  = '120 '
+    else "light theme colors
+        let s:bg           = '230 '
+        let s:fg           = s:black
+        let s:cursor       = s:black
+        let s:highlight    = s:white
+        let s:light_blue   = '75 '
+        let s:warn         = s:bright_purple
+        let s:bright_green = '34 '
+        let s:special_key  = s:bright_green
+    endif "end if background dark/light
+    "}}}
+"}}}
+"{{{term
+else
+    "{{{black/white
+    let s:black = ''
+    let s:white = ''
+    "}}}
+    "{{{blues
+    let s:blue      = ''
+    "light blue is set in dark/light section
+    let s:pale_blue = ''
+    let s:cyan      = ''
+    "}}}
+    "{{{greens
+    let s:green      = ''
+    "bright green is set in dark/light section
+    let s:pale_green = ''
+    let s:lime       = ''
+    let s:light_lime = ''
+    "}}}
+    "{{{greys
+    let s:grey       = ''
+    let s:light_grey = ''
+    "}}}
+    "{{{oranges
+    let s:orange      = ''
+    let s:dark_orange = ''
+    "}}}
+    "{{{pinks
+    let s:pink       = ''
+    let s:light_pink = ''
+    "}}}
+    "{{{purples
+    let s:purple        = ''
+    let s:bright_purple = ''
+    let s:light_purple  = ''
+    "}}}
+    "{{{reds
+    let s:red        = ''
+    let s:bright_red = ''
+    let s:dark_red   = ''
+    let s:pale_red   = ''
+    "}}}
+    "{{{yellows
+    let s:yellow       = ''
+    let s:light_yellow = ''
+    "}}}
+
+    "{{{-dark/light colors
+    if &background == "dark" "dark theme colors
+        let s:bg           = ''
+        let s:fg           = ''
+        let s:cursor       = s:white
+        let s:highlight    = ''
+        let s:light_blue   = ''
+        let s:warn         = s:yellow
+        let s:bright_green = ''
+        let s:special_key  = ''
+    else "light theme colors
+        let s:bg           = ''
+        let s:fg           = s:black
+        let s:cursor       = s:black
+        let s:highlight    = s:white
+        let s:light_blue   = ''
+        let s:warn         = s:bright_purple
+        let s:bright_green = ''
+        let s:special_key  = s:bright_green
+    endif "end if background dark/light
+    "}}}
+endif
 "}}}
 "}}}===========================================================================
 
