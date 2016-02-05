@@ -1,7 +1,7 @@
 " Vim colorscheme file
 " Bradford Smith
 " bsmith.vim
-" updated: 02/03/2016
+" updated: 02/05/2016
 "=====================
 
 
@@ -123,7 +123,7 @@ elseif &t_Co == 256
     let s:m = ' cterm'
 else
     let s:m = ' term'
-    echoerr "bsmith.vim does not currently support terminals with < 256 colors, results may vary!"
+    echoerr "bsmith.vim does not currently support non-color terminals, results may vary!"
 endif
 
 let s:mfg = s:m . "fg="      "mode foreground color statement
@@ -204,8 +204,8 @@ if (has('gui_running'))
     endif "end if background dark/light
     "}}}
 "}}}
-"{{{t_Co == 256
-elseif &t_Co == 256
+"{{{t_Co >= 256
+elseif &t_Co >= 256
     "{{{black/white
     let s:black = '16 '
     let s:white = '253 '
@@ -336,6 +336,75 @@ elseif &t_Co == 16
         let s:cursor       = s:black
         let s:highlight    = s:white
         let s:light_blue   = '14 '
+        let s:warn         = s:bright_purple
+        let s:bright_green = s:lime
+        let s:special_key  = s:bright_green
+    endif "end if background dark/light
+    "}}}
+"}}}
+"{{{t_Co == 8
+elseif &t_Co == 8
+    "{{{black/white
+    let s:black = '0 '
+    let s:white = '7 '
+    "}}}
+    "{{{blues
+    let s:blue      = '4 '
+    "light blue is set in dark/light section
+    let s:pale_blue = s:blue
+    let s:cyan      = '6 '
+    "}}}
+    "{{{greens
+    let s:green      = '2 '
+    "bright green is set in dark/light section
+    let s:pale_green = s:green
+    let s:lime       = s:pale_green
+    let s:light_lime = s:pale_green
+    "}}}
+    "{{{greys
+    let s:grey       = s:black
+    let s:light_grey = s:grey
+    "}}}
+    "{{{oranges
+    let s:orange      = s:dark_orange
+    let s:dark_orange = '3 '
+    "}}}
+    "{{{pinks
+    let s:pink       = '5 '
+    let s:light_pink = s:pink
+    "}}}
+    "{{{purples
+    let s:purple        = s:pink
+    let s:bright_purple = s:light_pink
+    let s:light_purple  = s:light_pink
+    "}}}
+    "{{{reds
+    let s:red        = '1 '
+    let s:bright_red = s:red
+    let s:dark_red   = s:red
+    let s:pale_red   = s:dark_red
+    "}}}
+    "{{{yellows
+    let s:yellow       = s:dark_orange
+    let s:light_yellow = s:orange
+    "}}}
+
+    "{{{-dark/light colors
+    if &background == "dark" "dark theme colors
+        let s:bg           = s:black
+        let s:fg           = s:white
+        let s:cursor       = s:white
+        let s:highlight    = s:grey
+        let s:light_blue   = s:cyan
+        let s:warn         = s:yellow
+        let s:bright_green = s:lime
+        let s:special_key  = s:lime
+    else "light theme colors
+        let s:bg           = s:white
+        let s:fg           = s:black
+        let s:cursor       = s:black
+        let s:highlight    = s:white
+        let s:light_blue   = s:cyan
         let s:warn         = s:bright_purple
         let s:bright_green = s:lime
         let s:special_key  = s:bright_green
