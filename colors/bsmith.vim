@@ -1,7 +1,7 @@
 " Vim colorscheme file
 " Bradford Smith
 " bsmith.vim
-" updated: 02/05/2016
+" updated: 02/11/2016
 "=====================
 
 
@@ -211,7 +211,7 @@ elseif &t_Co >= 256
     let s:white = '253 '
     "}}}
     "{{{blues
-    let s:blue      = '21 '
+    let s:blue      = '27 '
     "light blue is set in dark/light section
     let s:pale_blue = '67 '
     let s:cyan      = '6 '
