@@ -1,7 +1,7 @@
 " Vim colorscheme file
 " Bradford Smith
 " bsmith.vim
-" updated: 02/17/2016
+" updated: 02/25/2016
 "=====================
 
 
@@ -524,9 +524,9 @@ hi link ModeMsg MoreMsg
 "{{{-menus/ui
 exe "hi StatusLine" . s:mfg . s:white . s:mbg . s:grey
 exe "hi StatusLineNC" . s:mfg . s:black . s:mbg . s:light_grey
-exe "hi Tabline" . s:u . s:mfg . s:black . s:mbg . s:white
-exe "hi TablineSel" . s:b
-exe "hi TabLineFill" . s:r
+hi link Tabline LineNR
+hi link TablineSel CursorLineNR
+hi link TablineFill CursorLine
 exe "hi WildMenu" . s:mfg . s:lime . s:mbg . s:grey
 exe "hi Folded" . s:mfg . s:pale_blue . s:mbg . s:black
 hi link FoldColumn Folded
