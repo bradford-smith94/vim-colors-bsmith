@@ -138,68 +138,68 @@ let s:u = s:m . "=underline" "mode unerline statement
 "{{{gui
 if (has('gui_running'))
     "{{{black/white
-    let s:black = ''
-    let s:white = ''
+    let s:black = '#000000 '
+    let s:white = '#dadada '
     "}}}
     "{{{blues
-    let s:blue      = ''
+    let s:blue      = '#005fff '
     "light blue is set in dark/light section
-    let s:pale_blue = ''
-    let s:cyan      = ''
+    let s:pale_blue = '#5f87af '
+    let s:cyan      = '#005f5f '
     "}}}
     "{{{greens
-    let s:green      = ''
+    let s:green      = '#008700 '
     "bright green is set in dark/light section
-    let s:pale_green = ''
-    let s:lime       = ''
-    let s:light_lime = ''
+    let s:pale_green = '#d7ffaf '
+    let s:lime       = '#87ff00 '
+    let s:light_lime = '#afff87 '
     "}}}
     "{{{greys
-    let s:grey       = ''
-    let s:light_grey = ''
+    let s:grey       = '#444444 '
+    let s:light_grey = '#767676 '
     "}}}
     "{{{oranges
-    let s:orange      = ''
-    let s:dark_orange = ''
+    let s:orange      = '#ff8700 '
+    let s:dark_orange = '#ff5f00 '
     "}}}
     "{{{pinks
-    let s:pink       = ''
-    let s:light_pink = ''
+    let s:pink       = '#d7005f '
+    let s:light_pink = '#ffafff '
     "}}}
     "{{{purples
-    let s:purple        = ''
-    let s:bright_purple = ''
-    let s:light_purple  = ''
+    let s:purple        = '#8700af '
+    let s:bright_purple = '#d700ff '
+    let s:light_purple  = '#af5faf '
     "}}}
     "{{{reds
-    let s:red        = ''
-    let s:bright_red = ''
-    let s:dark_red   = ''
-    let s:pale_red   = ''
+    let s:red        = '#d70000 '
+    let s:bright_red = '#ff0000 '
+    let s:dark_red   = '#5f0000 '
+    let s:pale_red   = '#d78787 '
     "}}}
     "{{{yellows
-    let s:yellow       = ''
-    let s:light_yellow = ''
+    let s:yellow       = '#ffff00 '
+    let s:light_yellow = '#ffff87 '
     "}}}
 
     "{{{-dark/light colors
     if &background == "dark" "dark theme colors
-        let s:bg           = ''
-        let s:fg           = ''
+        let s:bg           = '#121212 '
+        let s:fg           = '#d0d0d0 '
         let s:cursor       = s:white
-        let s:highlight    = ''
-        let s:light_blue   = ''
+        let s:highlight    = '#303030 '
+        let s:light_blue   = '#5fd7ff '
         let s:warn         = s:yellow
-        let s:bright_green = ''
-        let s:special_key  = ''
+        let s:bright_green = '#87d700 '
+        let s:special_key  = '#87ff87 '
     else "light theme colors
-        let s:bg           = ''
+        let s:bg           = '#ffffd7 '
         let s:fg           = s:black
         let s:cursor       = s:black
         let s:highlight    = s:white
-        let s:light_blue   = ''
+        let s:light_blue   = '#5fafff '
         let s:warn         = s:bright_purple
-        let s:bright_green = ''
+        let s:bright_green = '#00af00 '
         let s:special_key  = s:bright_green
     endif "end if background dark/light
     "}}}
