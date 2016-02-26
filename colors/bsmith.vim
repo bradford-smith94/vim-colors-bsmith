@@ -118,7 +118,6 @@ hi clear Exception
 "set the mode statement (s:m) based on vim/gvim and number of supported colors
 if (has('gui_running'))
     let s:m = ' gui'
-    echoerr "bsmith.vim does not currently support GVim, results may vary!"
 elseif &t_Co >= 256 || &t_Co == 16 || &t_Co == 8
     let s:m = ' cterm'
 else
