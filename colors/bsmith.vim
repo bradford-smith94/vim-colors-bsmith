@@ -1,7 +1,7 @@
 " Vim colorscheme file
 " Bradford Smith
 " bsmith.vim
-" updated: 02/25/2016
+" updated: 03/06/2016
 "=====================
 
 
@@ -144,7 +144,7 @@ if (has('gui_running'))
     let s:blue      = '#005fff '
     "light blue is set in dark/light section
     let s:pale_blue = '#5f87af '
-    let s:cyan      = '#005f5f '
+    let s:cyan      = '#005f87 '
     "}}}
     "{{{greens
     let s:green      = '#008700 '
@@ -213,7 +213,7 @@ elseif &t_Co >= 256
     let s:blue      = '27 '
     "light blue is set in dark/light section
     let s:pale_blue = '67 '
-    let s:cyan      = '23 '
+    let s:cyan      = '24 '
     "}}}
     "{{{greens
     let s:green      = '28 '
