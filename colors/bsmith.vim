@@ -123,6 +123,7 @@ elseif &t_Co >= 256 || &t_Co == 16 || &t_Co == 8
 else
     let s:m = ' term'
     echoerr "bsmith.vim does not currently support non-color terminals, results may vary!"
+    finish
 endif
 
 let s:mfg = s:m . "fg="      "mode foreground color statement
