@@ -528,7 +528,7 @@ hi link Tabline LineNR
 hi link TablineSel CursorLineNR
 hi link TablineFill CursorLine
 exe "hi WildMenu" . s:mfg . s:lime . s:mbg . s:grey
-exe "hi Folded" . s:mfg . s:pale_blue . s:mbg . s:black
+exe "hi Folded" . s:mfg . s:cyan . s:mbg . s:bg
 hi link FoldColumn Folded
 exe "hi PMenu" . s:mfg . s:light_lime . s:mbg . s:light_grey
 hi link PMenuThumb PMenu
