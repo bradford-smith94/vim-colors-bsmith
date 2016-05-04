@@ -1,7 +1,7 @@
 " Vim colors theme for vim-airline
 " Bradford Smith
 " bsmith_dark.vim
-" updated: 11/25/2015
+" updated: 05/04/2015
 """"""""""""""""""""""""""""""""""""""
 
 let g:airline#themes#bsmith_dark#palette = {}
@@ -31,9 +31,9 @@ let g:airline#themes#bsmith_dark#palette.insert_paste = {
       \ }
 
 "REPLACE
-let s:R1 = [ 'ffffff' , 'ff0000' , 255 , 196 ]
-let s:R2 = [ 'ffffff' , 'af0000' , 255 , 124 ]
-let s:R3 = [ 'ffffff' , '5f0000' , 255 , 52  ]
+let s:R1 = [ '#ffffff' , '#ff0000' , 255 , 196 ]
+let s:R2 = [ '#ffffff' , '#af0000' , 255 , 124 ]
+let s:R3 = [ '#ffffff' , '#5f0000' , 255 , 52  ]
 let g:airline#themes#bsmith_dark#palette.replace = airline#themes#generate_color_map(s:R1, s:R2, s:R3)
 let g:airline#themes#bsmith_dark#palette.replace_modified = {
       \ 'airline_c': [ '#5f0000' , '#bcbcbc' , 52      , 250     , ''     ] ,
