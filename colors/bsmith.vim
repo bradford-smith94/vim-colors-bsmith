@@ -1,7 +1,7 @@
 " Vim colorscheme file
 " Bradford Smith
 " bsmith.vim
-" updated: 03/07/2016
+" updated: 05/23/2016
 "=====================
 
 
@@ -85,7 +85,6 @@ hi clear Comment
 hi clear SpecialComment
 hi clear TODO
 hi clear NonText
-hi clear Ignore
 hi clear Conceal
 
 hi clear Type
@@ -573,7 +572,6 @@ else
     exe "hi TODO" . s:b . s:mfg . s:black . s:mbg . s:yellow
 endif
 exe "hi NonText" . s:mfg . s:light_grey
-hi link Ignore NonText
 exe "hi Conceal" s:mfg . s:white . s:mbg . s:light_grey
 "}}}
 
