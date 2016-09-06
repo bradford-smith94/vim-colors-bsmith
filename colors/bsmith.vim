@@ -1,7 +1,7 @@
 " Vim colorscheme file
 " Bradford Smith
 " bsmith.vim
-" updated: 05/23/2016
+" updated: 09/06/2016
 "=====================
 
 
@@ -603,7 +603,7 @@ exe "hi Identifier" . s:mfg . s:bright_green
 exe "hi Conditional" . s:b . s:mfg . s:orange
 hi link Repeat Conditional
 exe "hi Statement" . s:mfg . s:bright_red
-hi link Operator Normal
+hi link Operator Function
 exe "hi Debug" . s:mfg . s:light_pink
 exe "hi Define" . s:b . s:mfg . s:light_blue
 hi link Macro Define
