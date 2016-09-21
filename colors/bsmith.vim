@@ -1,28 +1,20 @@
 " Vim colorscheme file
 " Bradford Smith
 " bsmith.vim
-" updated: 09/06/2016
+" updated: 09/21/2016
 "=====================
 
 
 "{{{--required colorscheme lines ==============================================
-hi clear
 if exists("syntax_on")
     syntax reset
 endif
 
 "set the name of the colorscheme
 let g:colors_name = "bsmith"
-
-"use my custom airline theme too, if it is present
-if &background == "dark"
-    let g:airline_theme = "bsmith_dark"
-else
-    let g:airline_theme = "bsmith_light"
-endif
 "}}}===========================================================================
 
-"{{{--clear highlights manually (fixes some errors with defaults) =============
+"{{{--clear highlights manually ===============================================
 hi clear Normal
 hi clear Cursor
 hi clear CursorLine
