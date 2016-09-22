@@ -105,386 +105,110 @@ hi clear PreProc
 hi clear Exception
 "}}}===========================================================================
 
-"{{{--define modes ============================================================
-"set the mode statement (s:m) based on vim/gvim and number of supported colors
-if (has('gui_running'))
-    let s:m = ' gui'
-elseif &t_Co >= 256 || &t_Co == 16 || &t_Co == 8
-    let s:m = ' cterm'
-else
-    let s:m = ' term'
-    echoerr "bsmith.vim does not currently support non-color terminals, results may vary!"
-    finish
-endif
-
-let s:mfg = s:m . "fg="      "mode foreground color statement
-let s:mbg = s:m . "bg="      "mode background color statement
-
-let s:b = s:m . "=bold"      "mode bold statement
-let s:r = s:m . "=reverse"   "mode reverse statement
-let s:u = s:m . "=underline" "mode unerline statement
-"}}}===========================================================================
-
 "{{{--define colors ===========================================================
-"{{{gui
-if (has('gui_running'))
-    "{{{black/white
-    let s:black = '#000000 '
-    let s:white = '#dadada '
-    "}}}
-    "{{{blues
-    let s:blue      = '#005fff '
-    "light blue is set in dark/light section
-    let s:pale_blue = '#5f87af '
-    let s:cyan      = '#008787 '
-    "}}}
-    "{{{greens
-    let s:green      = '#008700 '
-    "bright green is set in dark/light section
-    let s:pale_green = '#d7ffaf '
-    let s:lime       = '#87ff00 '
-    let s:light_lime = '#afff87 '
-    "}}}
-    "{{{greys
-    let s:grey       = '#444444 '
-    let s:light_grey = '#767676 '
-    "}}}
-    "{{{oranges
-    let s:orange      = '#ff8700 '
-    let s:dark_orange = '#ff5f00 '
-    "}}}
-    "{{{pinks
-    let s:pink       = '#d7005f '
-    let s:light_pink = '#ffafff '
-    "}}}
-    "{{{purples
-    let s:purple        = '#8700af '
-    let s:bright_purple = '#d700ff '
-    let s:light_purple  = '#af5faf '
-    "}}}
-    "{{{reds
-    let s:red        = '#d70000 '
-    let s:bright_red = '#ff0000 '
-    let s:dark_red   = '#5f0000 '
-    let s:pale_red   = '#d78787 '
-    "}}}
-    "{{{yellows
-    let s:yellow       = '#ffff00 '
-    let s:light_yellow = '#ffff87 '
-    "}}}
+    "gui black #000000
+    "gui white #dadada
+    "gui blue #005fff
+    "gui pale blue #5f87af
+    "gui cyan #008787
+    "gui green #008700
+    "gui pale green #d7ffaf
+    "gui lime #87ff00
+    "gui light lime #afff87
+    "gui grey #444444
+    "gui light grey #767676
+    "gui orange      #ff8700
+    "gui dark orange #ff5f00
+    "gui pink       #d7005f
+    "gui light pink #ffafff
+    "gui purple        #8700af
+    "gui bright purple #d700ff
+    "gui light purple  #af5faf
+    "gui red        #d70000
+    "gui bright red #ff0000
+    "gui dark red   #5f0000
+    "gui pale red   #d78787
+    "gui yellow       #ffff00
+    "gui light yellow #ffff87
 
-    "{{{-dark/light colors
-    if &background == "dark" "dark theme colors
-        let s:bg           = '#121212 '
-        let s:fg           = '#d0d0d0 '
-        let s:cursor       = s:white
-        let s:highlight    = '#303030 '
-        let s:light_blue   = '#5fd7ff '
-        let s:warn         = s:yellow
-        let s:bright_green = '#87d700 '
-        let s:special_key  = '#87ff87 '
-    else "light theme colors
-        let s:bg           = '#ffffd7 '
-        let s:fg           = s:black
-        let s:cursor       = s:black
-        let s:highlight    = s:white
-        let s:light_blue   = '#5fafff '
-        let s:warn         = s:bright_purple
-        let s:bright_green = '#00af00 '
-        let s:special_key  = s:bright_green
-    endif "end if background dark/light
-    "}}}
-"}}}
-"{{{t_Co >= 256
-elseif &t_Co >= 256
-    "{{{black/white
-    let s:black = '16 '
-    let s:white = '253 '
-    "}}}
-    "{{{blues
-    let s:blue      = '27 '
-    "light blue is set in dark/light section
-    let s:pale_blue = '67 '
-    let s:cyan      = '30 '
-    "}}}
-    "{{{greens
-    let s:green      = '28 '
-    "bright green is set in dark/light section
-    let s:pale_green = '193 '
-    let s:lime       = '118 '
-    let s:light_lime = '156 '
-    "}}}
-    "{{{greys
-    let s:grey       = '238 '
-    let s:light_grey = '243 '
-    "}}}
-    "{{{oranges
-    let s:orange      = '208 '
-    let s:dark_orange = '202 '
-    "}}}
-    "{{{pinks
-    let s:pink       = '161 '
-    let s:light_pink = '219 '
-    "}}}
-    "{{{purples
-    let s:purple        = '91 '
-    let s:bright_purple = '165 '
-    let s:light_purple  = '133 '
-    "}}}
-    "{{{reds
-    let s:red        = '160 '
-    let s:bright_red = '196 '
-    let s:dark_red   = '52 '
-    let s:pale_red   = '174 '
-    "}}}
-    "{{{yellows
-    let s:yellow       = '226 '
-    let s:light_yellow = '228 '
-    "}}}
-
-    "{{{-dark/light colors
-    if &background == "dark" "dark theme colors
-        let s:bg           = '233 '
-        let s:fg           = '252 '
-        let s:cursor       = s:white
-        let s:highlight    = '236 '
-        let s:light_blue   = '81 '
-        let s:warn         = s:yellow
-        let s:bright_green = '112 '
-        let s:special_key  = '120 '
-    else "light theme colors
-        let s:bg           = '230 '
-        let s:fg           = s:black
-        let s:cursor       = s:black
-        let s:highlight    = s:white
-        let s:light_blue   = '75 '
-        let s:warn         = s:bright_purple
-        let s:bright_green = '34 '
-        let s:special_key  = s:bright_green
-    endif "end if background dark/light
-    "}}}
-"}}}
-"{{{t_Co == 16
-elseif &t_Co == 16
-    "{{{black/white
-    let s:black = '0 '
-    let s:white = '15 '
-    "}}}
-    "{{{blues
-    let s:blue      = '4 '
-    "light blue is set in dark/light section
-    let s:pale_blue = '12 '
-    let s:cyan      = '6 '
-    "}}}
-    "{{{greens
-    let s:green      = '2 '
-    "bright green is set in dark/light section
-    let s:pale_green = '10 '
-    let s:lime       = s:pale_green
-    let s:light_lime = s:pale_green
-    "}}}
-    "{{{greys
-    let s:grey       = '8 '
-    let s:light_grey = s:grey
-    "}}}
-    "{{{oranges
-    let s:orange      = '11 '
-    let s:dark_orange = '3 '
-    "}}}
-    "{{{pinks
-    let s:pink       = '5 '
-    let s:light_pink = '13 '
-    "}}}
-    "{{{purples
-    let s:purple        = s:pink
-    let s:bright_purple = s:light_pink
-    let s:light_purple  = s:light_pink
-    "}}}
-    "{{{reds
-    let s:red        = '9 '
-    let s:bright_red = '1 '
-    let s:dark_red   = s:red
-    let s:pale_red   = s:dark_red
-    "}}}
-    "{{{yellows
-    let s:yellow       = s:dark_orange
-    let s:light_yellow = s:orange
-    "}}}
-
-    "{{{-dark/light colors
-    if &background == "dark" "dark theme colors
-        let s:bg           = s:black
-        let s:fg           = '7 '
-        let s:cursor       = s:white
-        let s:highlight    = s:grey
-        let s:light_blue   = '14 '
-        let s:warn         = s:yellow
-        let s:bright_green = s:lime
-        let s:special_key  = s:lime
-    else "light theme colors
-        let s:bg           = '7 '
-        let s:fg           = s:black
-        let s:cursor       = s:black
-        let s:highlight    = s:white
-        let s:light_blue   = '14 '
-        let s:warn         = s:bright_purple
-        let s:bright_green = s:lime
-        let s:special_key  = s:bright_green
-    endif "end if background dark/light
-    "}}}
-"}}}
-"{{{t_Co == 8
-elseif &t_Co == 8
-    "{{{black/white
-    let s:black = '0 '
-    let s:white = '7 '
-    "}}}
-    "{{{blues
-    let s:blue      = '4 '
-    "light blue is set in dark/light section
-    let s:pale_blue = s:blue
-    let s:cyan      = '6 '
-    "}}}
-    "{{{greens
-    let s:green      = '2 '
-    "bright green is set in dark/light section
-    let s:pale_green = s:green
-    let s:lime       = s:pale_green
-    let s:light_lime = s:pale_green
-    "}}}
-    "{{{greys
-    let s:grey       = s:black
-    let s:light_grey = s:grey
-    "}}}
-    "{{{oranges
-    let s:orange      = s:dark_orange
-    let s:dark_orange = '3 '
-    "}}}
-    "{{{pinks
-    let s:pink       = '5 '
-    let s:light_pink = s:pink
-    "}}}
-    "{{{purples
-    let s:purple        = s:pink
-    let s:bright_purple = s:light_pink
-    let s:light_purple  = s:light_pink
-    "}}}
-    "{{{reds
-    let s:red        = '1 '
-    let s:bright_red = s:red
-    let s:dark_red   = s:red
-    let s:pale_red   = s:dark_red
-    "}}}
-    "{{{yellows
-    let s:yellow       = s:dark_orange
-    let s:light_yellow = s:orange
-    "}}}
-
-    "{{{-dark/light colors
-    if &background == "dark" "dark theme colors
-        let s:bg           = s:black
-        let s:fg           = s:white
-        let s:cursor       = s:white
-        let s:highlight    = s:grey
-        let s:light_blue   = s:cyan
-        let s:warn         = s:yellow
-        let s:bright_green = s:lime
-        let s:special_key  = s:lime
-    else "light theme colors
-        let s:bg           = s:white
-        let s:fg           = s:black
-        let s:cursor       = s:black
-        let s:highlight    = s:white
-        let s:light_blue   = s:cyan
-        let s:warn         = s:bright_purple
-        let s:bright_green = s:lime
-        let s:special_key  = s:bright_green
-    endif "end if background dark/light
-    "}}}
-"}}}
-"{{{term
-else
-    "{{{black/white
-    let s:black = ''
-    let s:white = ''
-    "}}}
-    "{{{blues
-    let s:blue      = ''
-    "light blue is set in dark/light section
-    let s:pale_blue = ''
-    let s:cyan      = ''
-    "}}}
-    "{{{greens
-    let s:green      = ''
-    "bright green is set in dark/light section
-    let s:pale_green = ''
-    let s:lime       = ''
-    let s:light_lime = ''
-    "}}}
-    "{{{greys
-    let s:grey       = ''
-    let s:light_grey = ''
-    "}}}
-    "{{{oranges
-    let s:orange      = ''
-    let s:dark_orange = ''
-    "}}}
-    "{{{pinks
-    let s:pink       = ''
-    let s:light_pink = ''
-    "}}}
-    "{{{purples
-    let s:purple        = ''
-    let s:bright_purple = ''
-    let s:light_purple  = ''
-    "}}}
-    "{{{reds
-    let s:red        = ''
-    let s:bright_red = ''
-    let s:dark_red   = ''
-    let s:pale_red   = ''
-    "}}}
-    "{{{yellows
-    let s:yellow       = ''
-    let s:light_yellow = ''
-    "}}}
-
-    "{{{-dark/light colors
-    if &background == "dark" "dark theme colors
-        let s:bg           = ''
-        let s:fg           = ''
-        let s:cursor       = s:white
-        let s:highlight    = ''
-        let s:light_blue   = ''
-        let s:warn         = s:yellow
-        let s:bright_green = ''
-        let s:special_key  = ''
-    else "light theme colors
-        let s:bg           = ''
-        let s:fg           = s:black
-        let s:cursor       = s:black
-        let s:highlight    = s:white
-        let s:light_blue   = ''
-        let s:warn         = s:bright_purple
-        let s:bright_green = ''
-        let s:special_key  = s:bright_green
-    endif "end if background dark/light
-    "}}}
-endif
-"}}}
+    "gui dark specific
+        "gui bg           #121212
+        "gui fg           #d0d0d0
+        "gui cursor       white
+        "gui highlight    #303030
+        "gui light blue   #5fd7ff
+        "gui warn         yellow
+        "gui bright green #87d700
+        "gui special key  #87ff87
+    "gui light specific
+        "gui bg           #ffffd7
+        "gui fg           black
+        "gui cursor       black
+        "gui highlight    white
+        "gui light blue   #5fafff
+        "gui warn         bright purple
+        "gui bright green #00af00
+        "gui special key  bright_green
+    "cterm black 16
+    "cterm white 253
+    "cterm blue      27
+    "cterm pale_blue 67
+    "cterm cyan      30
+    "cterm green      28
+    "cterm pale_green 193
+    "cterm lime       118
+    "cterm light_lime 156
+    "cterm grey       238
+    "cterm light_grey 243
+    "cterm orange      208
+    "cterm dark_orange 202
+    "cterm pink       161
+    "cterm light_pink 219
+    "cterm purple        91
+    "cterm bright_purple 165
+    "cterm light_purple  133
+    "cterm red        160
+    "cterm bright_red 196
+    "cterm dark_red   52
+    "cterm pale_red   174
+    "cterm yellow       226
+    "cterm light_yellow 228
+    "cterm dark specifics
+        "cterm bg           233
+        "cterm fg           252
+        "cterm cursor       = s:white
+        "cterm highlight    236
+        "cterm light_blue   81
+        "cterm warn         = s:yellow
+        "cterm bright_green 112
+        "cterm special_key  120
+    "cterm light specifics
+        "cterm bg           230
+        "cterm fg           = s:black
+        "cterm cursor       = s:black
+        "cterm highlight    = s:white
+        "cterm light_blue   75
+        "cterm warn         = s:bright_purple
+        "cterm bright_green 34
+        "cterm special_key  = s:bright_green
 "}}}===========================================================================
 
 "{{{--do highlights ===========================================================
 "{{{-vim things
 if &background == "dark"
-    exe "hi Normal" . s:mfg . s:fg . s:mbg . s:bg
+    highlight Normal guifg=#d0d0d0 guibg=#121212 ctermfg=252 ctermbg=233
     set background=dark "this is a fix for the background color switching
+
+    highlight Cursor guifg=#dadada guibg=#d0d0d0  ctermfg=253 ctermbg=233
+    highlight CursorLine guibg=#303030 ctermbg=236
+    highlight link CursorColumn CursorLine
 else
-    exe "hi Normal" . s:mfg . s:fg . s:mbg . s:bg
+    highlight Normal guifg=#000000 guibg=#ffffd7 ctermfg=16 ctermbg=230
+
+    highlight Cursor guifg=#121212 guibg=#000000  ctermfg=233 ctermbg=253
+    highlight CursorLine guibg=#ffffd7 ctermbg=253
+    highlight link CursorColumn CursorLine
 endif
-exe "hi Cursor" . s:mfg . s:cursor . s:mbg . s:fg
-exe "hi CursorLine" . s:mbg . s:highlight
-hi link CursorColumn CursorLine
 exe "hi LineNR" . s:mfg . s:fg . s:mbg . s:highlight
 exe "hi CursorLineNR" . s:b . s:mfg . s:orange . s:mbg . s:bg
 hi link ColorColumn CursorColumn
