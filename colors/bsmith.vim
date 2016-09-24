@@ -1,7 +1,7 @@
 " Vim colorscheme file
 " Bradford Smith
 " bsmith.vim
-" updated: 09/21/2016
+" updated: 09/24/2016
 "=====================
 
 
@@ -173,6 +173,7 @@ hi clear Exception
     "cterm pale_red   174
     "cterm yellow       226
     "cterm light_yellow 228
+
     "cterm dark specifics
         "cterm bg           233
         "cterm fg           252
@@ -194,90 +195,164 @@ hi clear Exception
 "}}}===========================================================================
 
 "{{{--do highlights ===========================================================
-"{{{-vim things
 if &background == "dark"
     highlight Normal guifg=#d0d0d0 guibg=#121212 ctermfg=252 ctermbg=233
     set background=dark "this is a fix for the background color switching
 
+    "{{{-vim things
     highlight Cursor guifg=#dadada guibg=#d0d0d0  ctermfg=253 ctermbg=233
     highlight CursorLine guibg=#303030 ctermbg=236
     highlight link CursorColumn CursorLine
+    highlight LineNR guifg=#d0d0d0 guibg=#303030 ctermfg=252 ctermbg=236
+    highlight CursorLineNR gui=bold guifg=#ff8700 guibg=#121212 cterm=bold ctermfg=208 ctermbg=233
+    highlight link ColorColumn CursorColumn
+    highlight Visual gui=reverse cterm=reverse
+    highlight VisualNOS guibg=#303030 ctermbg=236
+    highlight SignColumn guifg=#87ff00 guibg=#303030 ctermfg=118 ctermbg=236
+    highlight Title guifg=#ff5f00 ctermfg=202
+    highlight Label guifg=#ffff87 ctermfg=228
+    highlight Directory guifg=#87ff00 ctermfg=118
+    highlight MatchParen gui=bold guifg=#d70000 cterm=bold ctermfg=160
+    highlight Special guifg=#d7005f ctermfg=161
+    highlight link SpecialChar Special
+    highlight link Tag Special
+    highlight SpecialKey guifg=#87ff87 ctermfg=120
+    highlight link Question SpecialKey
+    highlight Delimiter guifg=#5fd7ff ctermfg=81
+    highlight Underlined gui=underline cterm=underline
+    "}}}
+
+    "{{{-messages
+    highlight Error guibg=#ff0000 ctermbg=196
+    highlight link ErrorMsg Error
+    highlight WarningMsg guifg=#ffff00 guibg=#303030 ctermfg=226 ctermbg=236
+    highlight MoreMsg guifg=#767676 ctermfg=243
+    highlight link ModeMsg MoreMsg
+    "}}}
+
+    "{{{-menus/ui
+    highlight StatusLine guifg=#dadada guibg=#444444 ctermfg=253 ctermbg=238
+    highlight StatusLineNC guifg=#000000 guibg=#767676 ctermfg=16 ctermbg=243
+    highlight link Tabline LineNR
+    highlight link TablineSel CursorLineNR
+    highlight link TablineFill CursorLine
+    highlight WildMenu guifg=#87ff00 guibg=#444444 ctermfg=118 ctermbg=238
+    highlight Folded guifg=#008787 guibg=#121212 ctermfg=30 ctermbg=233
+    highlight link FoldColumn Folded
+    highlight PMenu guifg=#afff87 guibg=#767676 ctermfg=156 ctermbg=243
+    highlight link PMenuThumb PMenu
+    highlight PMenuSel gui=bold guifg=#afff87 guibg=#444444 cterm=bold ctermfg=156 ctermbg=238
+    highlight PMenuSBar guifg=#dadada guibg=#444444 ctermfg=253 ctermbg=238
+    highlight VertSplit guifg=#767676 ctermfg=243
+    "}}}
+
+    "{{{-searching/spelling
+    highlight Search guifg=#000000 guibg=#ffff87 ctermfg=16 ctermbg=228
+    highlight IncSearch guifg=#000000 guibg=#d7ffaf ctermfg=16 ctermbg=193
+    highlight SpellBad gui=underline guifg=#d70000 cterm=underline ctermfg=160
+    highlight SpellCap gui=underline guifg=#005fff cterm=underline ctermfg=27
+    highlight SpellRare gui=underline guifg=#d700ff cterm=underline ctermfg=165
+    highlight SpellLocal gui=underline guifg=#8700af cterm=underline ctermfg=91
+    highlight link SyntasticError SpellBad
+    highlight link SyntasticWarning WarningMsg
+    highlight link SyntasticStyleError SyntasticError
+    highlight link SyntasticStyleWarning SyntasticWarning
+    "}}}
+
+    "{{{-vimdiff colors
+    highlight DiffAdd guifg=#d78787 guibg=#008700 ctermfg=174 ctermbg=28
+    highlight DiffChange guifg=#d78787 guibg=#005fff ctermfg=174 ctermbg=27
+    highlight DiffDelete guibg=#5f0000 ctermbg=52
+    highlight DiffText guifg=#005fff guibg=#767676 ctermfg=27 ctermbg=243
+    "}}}
+
+    "{{{-comments
+    "}}}
+
+    "{{{-types
+    "}}}
+
+    "{{{-other programming language constructs
+    "}}}
 else
     highlight Normal guifg=#000000 guibg=#ffffd7 ctermfg=16 ctermbg=230
 
+    "{{{-vim things
     highlight Cursor guifg=#121212 guibg=#000000  ctermfg=233 ctermbg=253
     highlight CursorLine guibg=#ffffd7 ctermbg=253
     highlight link CursorColumn CursorLine
+    highlight LineNR guifg=#000000 guibg=#dadada ctermfg=16 ctermbg=253
+    highlight CursorLineNR gui=bold guifg=#ff8700 guibg=#ffffd7 cterm=bold ctermfg=208 ctermbg=230
+    highlight link ColorColumn CursorColumn
+    highlight Visual gui=reverse cterm=reverse
+    highlight VisualNOS guibg=#dadada ctermbg=253
+    highlight SignColumn guifg=#87ff00 guibg=#dadada ctermfg=118 ctermbg=253
+    highlight Title guifg=#ff5f00 ctermfg=202
+    highlight Label guifg=#ffff87 ctermfg=228
+    highlight Directory guifg=#87ff00 ctermfg=118
+    highlight MatchParen gui=bold guifg=#d70000 cterm=bold ctermfg=160
+    highlight Special guifg=#d7005f ctermfg=161
+    highlight link SpecialChar Special
+    highlight link Tag Special
+    highlight SpecialKey guifg=#00af00 ctermfg=34
+    highlight link Question SpecialKey
+    highlight Delimiter guifg=#5fafff ctermfg=75
+    highlight Underlined gui=underline cterm=underline
+    "}}}
+
+    "{{{-messages
+    highlight Error guibg=#ff0000 ctermbg=196
+    highlight link ErrorMsg Error
+    highlight WarningMsg guifg=#d700ff guibg=#dadada ctermfg=165 ctermbg=253
+    highlight MoreMsg guifg=#767676 ctermfg=243
+    highlight link ModeMsg MoreMsg
+    "}}}
+
+    "{{{-menus/ui
+    highlight StatusLine guifg=#dadada guibg=#444444 ctermfg=253 ctermbg=238
+    highlight StatusLineNC guifg=#000000 guibg=#767676 ctermfg=16 ctermbg=243
+    highlight link Tabline LineNR
+    highlight link TablineSel CursorLineNR
+    highlight link TablineFill CursorLine
+    highlight WildMenu guifg=#87ff00 guibg=#444444 ctermfg=118 ctermbg=238
+    highlight Folded guifg=#008787 guibg=#ffffd7 ctermfg=30 ctermbg=230
+    highlight link FoldColumn Folded
+    highlight PMenu guifg=#afff87 guibg=#767676 ctermfg=156 ctermbg=243
+    highlight link PMenuThumb PMenu
+    highlight PMenuSel gui=bold guifg=#afff87 guibg=#444444 cterm=bold ctermfg=156 ctermbg=238
+    highlight PMenuSBar guifg=#dadada guibg=#444444 ctermfg=253 ctermbg=238
+    highlight VertSplit guifg=#767676 ctermfg=243
+    "}}}
+
+    "{{{-searching/spelling
+    highlight Search guifg=#000000 guibg=#ffff87 ctermfg=16 ctermbg=228
+    highlight IncSearch guifg=#000000 guibg=#d7ffaf ctermfg=16 ctermbg=193
+    highlight SpellBad gui=underline guifg=#d70000 guibg=#dadada cterm=underline ctermfg=160 ctermbg=253
+    highlight SpellCap gui=underline guifg=#005fff guibg=#dadada cterm=underline ctermfg=27 ctermbg=253
+    highlight SpellRare gui=underline guifg=#d700ff guibg=#dadada cterm=underline ctermfg=165 ctermbg=253
+    highlight SpellLocal gui=underline guifg=#8700af guibg=#dadada cterm=underline ctermfg=91 ctermbg=253
+    highlight link SyntasticError SpellBad
+    highlight link SyntasticWarning WarningMsg
+    highlight link SyntasticStyleError SyntasticError
+    highlight link SyntasticStyleWarning SyntasticWarning
+    "}}}
+
+    "{{{-vimdiff colors
+    highlight DiffAdd guifg=#d78787 guibg=#008700 ctermfg=174 ctermbg=28
+    highlight DiffChange guifg=#d78787 guibg=#005fff ctermfg=174 ctermbg=27
+    highlight DiffDelete guibg=#5f0000 ctermbg=52
+    highlight DiffText guifg=#005fff guibg=#767676 ctermfg=27 ctermbg=243
+    "}}}
+
+    "{{{-comments
+    "}}}
+
+    "{{{-types
+    "}}}
+
+    "{{{-other programming language constructs
+    "}}}
 endif
-exe "hi LineNR" . s:mfg . s:fg . s:mbg . s:highlight
-exe "hi CursorLineNR" . s:b . s:mfg . s:orange . s:mbg . s:bg
-hi link ColorColumn CursorColumn
-exe "hi Visual" . s:r
-exe "hi VisualNOS" . s:mbg . s:highlight
-exe "hi SignColumn" . s:mfg . s:lime . s:mbg . s:highlight
-exe "hi Title" . s:mfg . s:dark_orange
-exe "hi Label" . s:mfg . s:light_yellow
-exe "hi Directory" . s:mfg . s:lime
-exe "hi MatchParen" . s:b . s:mfg . s:red
-exe "hi Special" . s:mfg . s:pink
-hi link SpecialChar Special
-hi link Tag Special
-exe "hi SpecialKey" . s:mfg . s:special_key
-hi link Question SpecialKey
-exe "hi Delimiter" . s:mfg . s:light_blue
-exe "hi Underlined" . s:u
-"}}}
-
-"{{{-messages
-exe "hi Error" . s:mbg . s:bright_red
-hi link ErrorMsg Error
-exe "hi WarningMsg" . s:mfg . s:warn . s:mbg . s:highlight
-exe "hi MoreMsg" . s:mfg . s:light_grey
-hi link ModeMsg MoreMsg
-"}}}
-
-"{{{-menus/ui
-exe "hi StatusLine" . s:mfg . s:white . s:mbg . s:grey
-exe "hi StatusLineNC" . s:mfg . s:black . s:mbg . s:light_grey
-hi link Tabline LineNR
-hi link TablineSel CursorLineNR
-hi link TablineFill CursorLine
-exe "hi WildMenu" . s:mfg . s:lime . s:mbg . s:grey
-exe "hi Folded" . s:mfg . s:cyan . s:mbg . s:bg
-hi link FoldColumn Folded
-exe "hi PMenu" . s:mfg . s:light_lime . s:mbg . s:light_grey
-hi link PMenuThumb PMenu
-exe "hi PMenuSel" . s:b . s:mfg . s:light_lime . s:mbg . s:grey
-exe "hi PMenuSBar" . s:mfg . s:white . s:mbg . s:grey
-exe "hi VertSplit" . s:mfg . s:light_grey
-"}}}
-
-"{{{-searching/spelling
-exe "hi Search" . s:mfg . s:black . s:mbg . s:light_yellow
-exe "hi IncSearch" . s:mfg . s:black . s:mbg . s:pale_green
-if &background == "dark"
-    exe "hi SpellBad" . s:u . s:mfg . s:red
-    exe "hi SpellCap" . s:u . s:mfg . s:blue
-    exe "hi SpellRare" . s:u . s:mfg . s:bright_purple
-    exe "hi SpellLocal" . s:u . s:mfg . s:purple
-else
-    exe "hi SpellBad" . s:u . s:mfg . s:red . s:mbg . s:white
-    exe "hi SpellCap" . s:u . s:mfg . s:blue . s:mbg . s:white
-    exe "hi SpellRare" . s:u . s:mfg . s:bright_purple . s:mbg . s:white
-    exe "hi SpellLocal" . s:u . s:mfg . s:purple . s:mbg . s:white
-endif
-hi link SyntasticError SpellBad
-hi link SyntasticWarning WarningMsg
-hi link SyntasticStyleError SyntasticError
-hi link SyntasticStyleWarning SyntasticWarning
-"}}}
-
-"{{{-vimdiff colors
-exe "hi DiffAdd" . s:mfg . s:pale_red . s:mbg . s:green
-exe "hi DiffChange" . s:mfg . s:pale_red . s:mbg . s:blue
-exe "hi DiffDelete" . s:mbg . s:dark_red
-exe "hi DiffText" . s:mfg . s:blue . s:mbg . s:light_grey
-"}}}
 
 "{{{-comments
 exe "hi Comment" . s:mfg . s:cyan
@@ -300,15 +375,15 @@ if &background == "dark"
 else
     exe "hi Constant" . s:mfg . s:orange
 endif
-hi link Boolean Constant
+highlight link Boolean Constant
 if &background == "dark"
     exe "hi Number" . s:mfg . s:light_purple
 else
     exe "hi Number" . s:mfg . s:purple
 endif
-hi link Float Number
+highlight link Float Number
 exe "hi Structure" . s:b . s:mfg . s:bright_green
-hi link Typedef Structure
+highlight link Typedef Structure
 exe "hi StorageClass" . s:mfg . s:orange
 "}}}
 
@@ -317,12 +392,12 @@ exe "hi Function" . s:b . s:mfg . s:light_blue
 exe "hi Keyword" . s:mfg . s:orange
 exe "hi Identifier" . s:mfg . s:bright_green
 exe "hi Conditional" . s:b . s:mfg . s:orange
-hi link Repeat Conditional
+highlight link Repeat Conditional
 exe "hi Statement" . s:mfg . s:bright_red
-hi link Operator Function
+highlight link Operator Function
 exe "hi Debug" . s:mfg . s:light_pink
 exe "hi Define" . s:b . s:mfg . s:light_blue
-hi link Macro Define
+highlight link Macro Define
 exe "hi PreCondit" . s:b . s:mfg . s:pale_blue
 exe "hi PreProc" . s:mfg . s:pink
 exe "hi Exception" . s:mfg . s:blue
