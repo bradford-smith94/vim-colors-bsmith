@@ -1,7 +1,7 @@
 " Vim colorscheme file
 " Bradford Smith
 " bsmith.vim
-" updated: 09/24/2016
+" updated: 09/25/2016
 "=====================
 
 
@@ -63,10 +63,6 @@ hi clear SpellBad
 hi clear SpellCap
 hi clear SpellRare
 hi clear SpellLocal
-hi clear SyntasticError
-hi clear SyntasticWarning
-hi clear SyntasticStyleError
-hi clear SyntasticStyleWarning
 
 hi clear DiffAdd
 hi clear DiffChange
@@ -164,10 +160,6 @@ if &background == "dark"
     highlight SpellCap gui=underline guifg=#005fff cterm=underline ctermfg=27
     highlight SpellRare gui=underline guifg=#d700ff cterm=underline ctermfg=165
     highlight SpellLocal gui=underline guifg=#8700af cterm=underline ctermfg=91
-    highlight link SyntasticError SpellBad
-    highlight link SyntasticWarning WarningMsg
-    highlight link SyntasticStyleError SyntasticError
-    highlight link SyntasticStyleWarning SyntasticWarning
     "}}}
 
     "{{{-vimdiff colors
@@ -270,10 +262,6 @@ else "&backgroung == "light"
     highlight SpellCap gui=underline guifg=#005fff guibg=#dadada cterm=underline ctermfg=27 ctermbg=253
     highlight SpellRare gui=underline guifg=#d700ff guibg=#dadada cterm=underline ctermfg=165 ctermbg=253
     highlight SpellLocal gui=underline guifg=#8700af guibg=#dadada cterm=underline ctermfg=91 ctermbg=253
-    highlight link SyntasticError SpellBad
-    highlight link SyntasticWarning WarningMsg
-    highlight link SyntasticStyleError SyntasticError
-    highlight link SyntasticStyleWarning SyntasticWarning
     "}}}
 
     "{{{-vimdiff colors
