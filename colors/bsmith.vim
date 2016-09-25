@@ -1,7 +1,7 @@
 " Vim colorscheme file
 " Bradford Smith
 " bsmith.vim
-" updated: 09/21/2016
+" updated: 09/24/2016
 "=====================
 
 
@@ -105,503 +105,220 @@ hi clear PreProc
 hi clear Exception
 "}}}===========================================================================
 
-"{{{--define modes ============================================================
-"set the mode statement (s:m) based on vim/gvim and number of supported colors
-if (has('gui_running'))
-    let s:m = ' gui'
-elseif &t_Co >= 256 || &t_Co == 16 || &t_Co == 8
-    let s:m = ' cterm'
-else
-    let s:m = ' term'
-    echoerr "bsmith.vim does not currently support non-color terminals, results may vary!"
-    finish
-endif
-
-let s:mfg = s:m . "fg="      "mode foreground color statement
-let s:mbg = s:m . "bg="      "mode background color statement
-
-let s:b = s:m . "=bold"      "mode bold statement
-let s:r = s:m . "=reverse"   "mode reverse statement
-let s:u = s:m . "=underline" "mode unerline statement
-"}}}===========================================================================
-
-"{{{--define colors ===========================================================
-"{{{gui
-if (has('gui_running'))
-    "{{{black/white
-    let s:black = '#000000 '
-    let s:white = '#dadada '
-    "}}}
-    "{{{blues
-    let s:blue      = '#005fff '
-    "light blue is set in dark/light section
-    let s:pale_blue = '#5f87af '
-    let s:cyan      = '#008787 '
-    "}}}
-    "{{{greens
-    let s:green      = '#008700 '
-    "bright green is set in dark/light section
-    let s:pale_green = '#d7ffaf '
-    let s:lime       = '#87ff00 '
-    let s:light_lime = '#afff87 '
-    "}}}
-    "{{{greys
-    let s:grey       = '#444444 '
-    let s:light_grey = '#767676 '
-    "}}}
-    "{{{oranges
-    let s:orange      = '#ff8700 '
-    let s:dark_orange = '#ff5f00 '
-    "}}}
-    "{{{pinks
-    let s:pink       = '#d7005f '
-    let s:light_pink = '#ffafff '
-    "}}}
-    "{{{purples
-    let s:purple        = '#8700af '
-    let s:bright_purple = '#d700ff '
-    let s:light_purple  = '#af5faf '
-    "}}}
-    "{{{reds
-    let s:red        = '#d70000 '
-    let s:bright_red = '#ff0000 '
-    let s:dark_red   = '#5f0000 '
-    let s:pale_red   = '#d78787 '
-    "}}}
-    "{{{yellows
-    let s:yellow       = '#ffff00 '
-    let s:light_yellow = '#ffff87 '
-    "}}}
-
-    "{{{-dark/light colors
-    if &background == "dark" "dark theme colors
-        let s:bg           = '#121212 '
-        let s:fg           = '#d0d0d0 '
-        let s:cursor       = s:white
-        let s:highlight    = '#303030 '
-        let s:light_blue   = '#5fd7ff '
-        let s:warn         = s:yellow
-        let s:bright_green = '#87d700 '
-        let s:special_key  = '#87ff87 '
-    else "light theme colors
-        let s:bg           = '#ffffd7 '
-        let s:fg           = s:black
-        let s:cursor       = s:black
-        let s:highlight    = s:white
-        let s:light_blue   = '#5fafff '
-        let s:warn         = s:bright_purple
-        let s:bright_green = '#00af00 '
-        let s:special_key  = s:bright_green
-    endif "end if background dark/light
-    "}}}
-"}}}
-"{{{t_Co >= 256
-elseif &t_Co >= 256
-    "{{{black/white
-    let s:black = '16 '
-    let s:white = '253 '
-    "}}}
-    "{{{blues
-    let s:blue      = '27 '
-    "light blue is set in dark/light section
-    let s:pale_blue = '67 '
-    let s:cyan      = '30 '
-    "}}}
-    "{{{greens
-    let s:green      = '28 '
-    "bright green is set in dark/light section
-    let s:pale_green = '193 '
-    let s:lime       = '118 '
-    let s:light_lime = '156 '
-    "}}}
-    "{{{greys
-    let s:grey       = '238 '
-    let s:light_grey = '243 '
-    "}}}
-    "{{{oranges
-    let s:orange      = '208 '
-    let s:dark_orange = '202 '
-    "}}}
-    "{{{pinks
-    let s:pink       = '161 '
-    let s:light_pink = '219 '
-    "}}}
-    "{{{purples
-    let s:purple        = '91 '
-    let s:bright_purple = '165 '
-    let s:light_purple  = '133 '
-    "}}}
-    "{{{reds
-    let s:red        = '160 '
-    let s:bright_red = '196 '
-    let s:dark_red   = '52 '
-    let s:pale_red   = '174 '
-    "}}}
-    "{{{yellows
-    let s:yellow       = '226 '
-    let s:light_yellow = '228 '
-    "}}}
-
-    "{{{-dark/light colors
-    if &background == "dark" "dark theme colors
-        let s:bg           = '233 '
-        let s:fg           = '252 '
-        let s:cursor       = s:white
-        let s:highlight    = '236 '
-        let s:light_blue   = '81 '
-        let s:warn         = s:yellow
-        let s:bright_green = '112 '
-        let s:special_key  = '120 '
-    else "light theme colors
-        let s:bg           = '230 '
-        let s:fg           = s:black
-        let s:cursor       = s:black
-        let s:highlight    = s:white
-        let s:light_blue   = '75 '
-        let s:warn         = s:bright_purple
-        let s:bright_green = '34 '
-        let s:special_key  = s:bright_green
-    endif "end if background dark/light
-    "}}}
-"}}}
-"{{{t_Co == 16
-elseif &t_Co == 16
-    "{{{black/white
-    let s:black = '0 '
-    let s:white = '15 '
-    "}}}
-    "{{{blues
-    let s:blue      = '4 '
-    "light blue is set in dark/light section
-    let s:pale_blue = '12 '
-    let s:cyan      = '6 '
-    "}}}
-    "{{{greens
-    let s:green      = '2 '
-    "bright green is set in dark/light section
-    let s:pale_green = '10 '
-    let s:lime       = s:pale_green
-    let s:light_lime = s:pale_green
-    "}}}
-    "{{{greys
-    let s:grey       = '8 '
-    let s:light_grey = s:grey
-    "}}}
-    "{{{oranges
-    let s:orange      = '11 '
-    let s:dark_orange = '3 '
-    "}}}
-    "{{{pinks
-    let s:pink       = '5 '
-    let s:light_pink = '13 '
-    "}}}
-    "{{{purples
-    let s:purple        = s:pink
-    let s:bright_purple = s:light_pink
-    let s:light_purple  = s:light_pink
-    "}}}
-    "{{{reds
-    let s:red        = '9 '
-    let s:bright_red = '1 '
-    let s:dark_red   = s:red
-    let s:pale_red   = s:dark_red
-    "}}}
-    "{{{yellows
-    let s:yellow       = s:dark_orange
-    let s:light_yellow = s:orange
-    "}}}
-
-    "{{{-dark/light colors
-    if &background == "dark" "dark theme colors
-        let s:bg           = s:black
-        let s:fg           = '7 '
-        let s:cursor       = s:white
-        let s:highlight    = s:grey
-        let s:light_blue   = '14 '
-        let s:warn         = s:yellow
-        let s:bright_green = s:lime
-        let s:special_key  = s:lime
-    else "light theme colors
-        let s:bg           = '7 '
-        let s:fg           = s:black
-        let s:cursor       = s:black
-        let s:highlight    = s:white
-        let s:light_blue   = '14 '
-        let s:warn         = s:bright_purple
-        let s:bright_green = s:lime
-        let s:special_key  = s:bright_green
-    endif "end if background dark/light
-    "}}}
-"}}}
-"{{{t_Co == 8
-elseif &t_Co == 8
-    "{{{black/white
-    let s:black = '0 '
-    let s:white = '7 '
-    "}}}
-    "{{{blues
-    let s:blue      = '4 '
-    "light blue is set in dark/light section
-    let s:pale_blue = s:blue
-    let s:cyan      = '6 '
-    "}}}
-    "{{{greens
-    let s:green      = '2 '
-    "bright green is set in dark/light section
-    let s:pale_green = s:green
-    let s:lime       = s:pale_green
-    let s:light_lime = s:pale_green
-    "}}}
-    "{{{greys
-    let s:grey       = s:black
-    let s:light_grey = s:grey
-    "}}}
-    "{{{oranges
-    let s:orange      = s:dark_orange
-    let s:dark_orange = '3 '
-    "}}}
-    "{{{pinks
-    let s:pink       = '5 '
-    let s:light_pink = s:pink
-    "}}}
-    "{{{purples
-    let s:purple        = s:pink
-    let s:bright_purple = s:light_pink
-    let s:light_purple  = s:light_pink
-    "}}}
-    "{{{reds
-    let s:red        = '1 '
-    let s:bright_red = s:red
-    let s:dark_red   = s:red
-    let s:pale_red   = s:dark_red
-    "}}}
-    "{{{yellows
-    let s:yellow       = s:dark_orange
-    let s:light_yellow = s:orange
-    "}}}
-
-    "{{{-dark/light colors
-    if &background == "dark" "dark theme colors
-        let s:bg           = s:black
-        let s:fg           = s:white
-        let s:cursor       = s:white
-        let s:highlight    = s:grey
-        let s:light_blue   = s:cyan
-        let s:warn         = s:yellow
-        let s:bright_green = s:lime
-        let s:special_key  = s:lime
-    else "light theme colors
-        let s:bg           = s:white
-        let s:fg           = s:black
-        let s:cursor       = s:black
-        let s:highlight    = s:white
-        let s:light_blue   = s:cyan
-        let s:warn         = s:bright_purple
-        let s:bright_green = s:lime
-        let s:special_key  = s:bright_green
-    endif "end if background dark/light
-    "}}}
-"}}}
-"{{{term
-else
-    "{{{black/white
-    let s:black = ''
-    let s:white = ''
-    "}}}
-    "{{{blues
-    let s:blue      = ''
-    "light blue is set in dark/light section
-    let s:pale_blue = ''
-    let s:cyan      = ''
-    "}}}
-    "{{{greens
-    let s:green      = ''
-    "bright green is set in dark/light section
-    let s:pale_green = ''
-    let s:lime       = ''
-    let s:light_lime = ''
-    "}}}
-    "{{{greys
-    let s:grey       = ''
-    let s:light_grey = ''
-    "}}}
-    "{{{oranges
-    let s:orange      = ''
-    let s:dark_orange = ''
-    "}}}
-    "{{{pinks
-    let s:pink       = ''
-    let s:light_pink = ''
-    "}}}
-    "{{{purples
-    let s:purple        = ''
-    let s:bright_purple = ''
-    let s:light_purple  = ''
-    "}}}
-    "{{{reds
-    let s:red        = ''
-    let s:bright_red = ''
-    let s:dark_red   = ''
-    let s:pale_red   = ''
-    "}}}
-    "{{{yellows
-    let s:yellow       = ''
-    let s:light_yellow = ''
-    "}}}
-
-    "{{{-dark/light colors
-    if &background == "dark" "dark theme colors
-        let s:bg           = ''
-        let s:fg           = ''
-        let s:cursor       = s:white
-        let s:highlight    = ''
-        let s:light_blue   = ''
-        let s:warn         = s:yellow
-        let s:bright_green = ''
-        let s:special_key  = ''
-    else "light theme colors
-        let s:bg           = ''
-        let s:fg           = s:black
-        let s:cursor       = s:black
-        let s:highlight    = s:white
-        let s:light_blue   = ''
-        let s:warn         = s:bright_purple
-        let s:bright_green = ''
-        let s:special_key  = s:bright_green
-    endif "end if background dark/light
-    "}}}
-endif
-"}}}
-"}}}===========================================================================
-
-"{{{--do highlights ===========================================================
-"{{{-vim things
+"{{{--apply new highlights ====================================================
 if &background == "dark"
-    exe "hi Normal" . s:mfg . s:fg . s:mbg . s:bg
+    highlight Normal guifg=#d0d0d0 guibg=#121212 ctermfg=252 ctermbg=233
     set background=dark "this is a fix for the background color switching
-else
-    exe "hi Normal" . s:mfg . s:fg . s:mbg . s:bg
+
+    "{{{-vim things
+    highlight Cursor guifg=#dadada guibg=#d0d0d0  ctermfg=253 ctermbg=233
+    highlight CursorLine guibg=#303030 ctermbg=236
+    highlight link CursorColumn CursorLine
+    highlight LineNR guifg=#d0d0d0 guibg=#303030 ctermfg=252 ctermbg=236
+    highlight CursorLineNR gui=bold guifg=#ff8700 guibg=#121212 cterm=bold ctermfg=208 ctermbg=233
+    highlight link ColorColumn CursorColumn
+    highlight Visual gui=reverse cterm=reverse
+    highlight VisualNOS guibg=#303030 ctermbg=236
+    highlight SignColumn guifg=#87ff00 guibg=#303030 ctermfg=118 ctermbg=236
+    highlight Title guifg=#ff5f00 ctermfg=202
+    highlight Label guifg=#ffff87 ctermfg=228
+    highlight Directory guifg=#87ff00 ctermfg=118
+    highlight MatchParen gui=bold guifg=#d70000 cterm=bold ctermfg=160
+    highlight Special guifg=#d7005f ctermfg=161
+    highlight link SpecialChar Special
+    highlight link Tag Special
+    highlight SpecialKey guifg=#87ff87 ctermfg=120
+    highlight link Question SpecialKey
+    highlight Delimiter guifg=#5fd7ff ctermfg=81
+    highlight Underlined gui=underline cterm=underline
+    "}}}
+
+    "{{{-messages
+    highlight Error guibg=#ff0000 ctermbg=196
+    highlight link ErrorMsg Error
+    highlight WarningMsg guifg=#ffff00 guibg=#303030 ctermfg=226 ctermbg=236
+    highlight MoreMsg guifg=#767676 ctermfg=243
+    highlight link ModeMsg MoreMsg
+    "}}}
+
+    "{{{-menus/ui
+    highlight StatusLine guifg=#dadada guibg=#444444 ctermfg=253 ctermbg=238
+    highlight StatusLineNC guifg=#000000 guibg=#767676 ctermfg=16 ctermbg=243
+    highlight link Tabline LineNR
+    highlight link TablineSel CursorLineNR
+    highlight link TablineFill CursorLine
+    highlight WildMenu guifg=#87ff00 guibg=#444444 ctermfg=118 ctermbg=238
+    highlight Folded guifg=#008787 guibg=#121212 ctermfg=30 ctermbg=233
+    highlight link FoldColumn Folded
+    highlight PMenu guifg=#afff87 guibg=#767676 ctermfg=156 ctermbg=243
+    highlight link PMenuThumb PMenu
+    highlight PMenuSel gui=bold guifg=#afff87 guibg=#444444 cterm=bold ctermfg=156 ctermbg=238
+    highlight PMenuSBar guifg=#dadada guibg=#444444 ctermfg=253 ctermbg=238
+    highlight VertSplit guifg=#767676 ctermfg=243
+    "}}}
+
+    "{{{-searching/spelling
+    highlight Search guifg=#000000 guibg=#ffff87 ctermfg=16 ctermbg=228
+    highlight IncSearch guifg=#000000 guibg=#d7ffaf ctermfg=16 ctermbg=193
+    highlight SpellBad gui=underline guifg=#d70000 cterm=underline ctermfg=160
+    highlight SpellCap gui=underline guifg=#005fff cterm=underline ctermfg=27
+    highlight SpellRare gui=underline guifg=#d700ff cterm=underline ctermfg=165
+    highlight SpellLocal gui=underline guifg=#8700af cterm=underline ctermfg=91
+    highlight link SyntasticError SpellBad
+    highlight link SyntasticWarning WarningMsg
+    highlight link SyntasticStyleError SyntasticError
+    highlight link SyntasticStyleWarning SyntasticWarning
+    "}}}
+
+    "{{{-vimdiff colors
+    highlight DiffAdd guifg=#d78787 guibg=#008700 ctermfg=174 ctermbg=28
+    highlight DiffChange guifg=#d78787 guibg=#005fff ctermfg=174 ctermbg=27
+    highlight DiffDelete guibg=#5f0000 ctermbg=52
+    highlight DiffText guifg=#005fff guibg=#767676 ctermfg=27 ctermbg=243
+    "}}}
+
+    "{{{-comments
+    highlight Comment guifg=#008787 ctermfg=30
+    highlight SpecialComment guifg=#5fd7ff ctermfg=81
+    highlight TODO gui=bold guifg=#ffff00 guibg=#000000 cterm=bold ctermfg=226 ctermbg=16
+    highlight NonText guifg=#767676 ctermfg=243
+    highlight Conceal guifg=#dadada guibg=#767676 ctermfg=253 ctermbg=243
+    "}}}
+
+    "{{{-types
+    highlight Type guifg=#87d700 ctermfg=112
+    highlight String guifg=#008700 ctermfg=28
+    highlight Character guifg=#ff0000 ctermfg=196
+    highlight Constant guifg=#ffff00 ctermfg=226
+    highlight link Boolean Constant
+    highlight Number guifg=#af5faf ctermfg=133
+    highlight link Float Number
+    highlight Structure gui=bold guifg=#87d700 cterm=bold ctermfg=112
+    highlight link Typedef Structure
+    highlight StorageClass guifg=#ff8700 ctermfg=208
+    "}}}
+
+    "{{{-other programming language constructs
+    highlight Function gui=bold guifg=#5fd7ff cterm=bold ctermfg=81
+    highlight Keyword guifg=#ff8700 ctermfg=208
+    highlight Identifier guifg=#87d700 ctermfg=112
+    highlight Conditional gui=bold guifg=#ff8700 cterm=bold ctermfg=208
+    highlight link Repeat Conditional
+    highlight Statement guifg=#ff0000 ctermfg=196
+    highlight link Operator Function
+    highlight Debug guifg=#ffafff ctermfg=219
+    highlight Define gui=bold guifg=#5fd7ff cterm=bold ctermfg=81
+    highlight link Macro Define
+    highlight PreCondit gui=bold guifg=#5f87af cterm=bold ctermfg=67
+    highlight PreProc guifg=#d7005f ctermfg=161
+    highlight Exception guifg=#005fff ctermfg=27
+    "}}}
+else "&backgroung == "light"
+    highlight Normal guifg=#000000 guibg=#ffffd7 ctermfg=16 ctermbg=230
+
+    "{{{-vim things
+    highlight Cursor guifg=#121212 guibg=#000000  ctermfg=233 ctermbg=253
+    highlight CursorLine guibg=#ffffd7 ctermbg=253
+    highlight link CursorColumn CursorLine
+    highlight LineNR guifg=#000000 guibg=#dadada ctermfg=16 ctermbg=253
+    highlight CursorLineNR gui=bold guifg=#ff8700 guibg=#ffffd7 cterm=bold ctermfg=208 ctermbg=230
+    highlight link ColorColumn CursorColumn
+    highlight Visual gui=reverse cterm=reverse
+    highlight VisualNOS guibg=#dadada ctermbg=253
+    highlight SignColumn guifg=#87ff00 guibg=#dadada ctermfg=118 ctermbg=253
+    highlight Title guifg=#ff5f00 ctermfg=202
+    highlight Label guifg=#ffff87 ctermfg=228
+    highlight Directory guifg=#87ff00 ctermfg=118
+    highlight MatchParen gui=bold guifg=#d70000 cterm=bold ctermfg=160
+    highlight Special guifg=#d7005f ctermfg=161
+    highlight link SpecialChar Special
+    highlight link Tag Special
+    highlight SpecialKey guifg=#00af00 ctermfg=34
+    highlight link Question SpecialKey
+    highlight Delimiter guifg=#5fafff ctermfg=75
+    highlight Underlined gui=underline cterm=underline
+    "}}}
+
+    "{{{-messages
+    highlight Error guibg=#ff0000 ctermbg=196
+    highlight link ErrorMsg Error
+    highlight WarningMsg guifg=#d700ff guibg=#dadada ctermfg=165 ctermbg=253
+    highlight MoreMsg guifg=#767676 ctermfg=243
+    highlight link ModeMsg MoreMsg
+    "}}}
+
+    "{{{-menus/ui
+    highlight StatusLine guifg=#dadada guibg=#444444 ctermfg=253 ctermbg=238
+    highlight StatusLineNC guifg=#000000 guibg=#767676 ctermfg=16 ctermbg=243
+    highlight link Tabline LineNR
+    highlight link TablineSel CursorLineNR
+    highlight link TablineFill CursorLine
+    highlight WildMenu guifg=#87ff00 guibg=#444444 ctermfg=118 ctermbg=238
+    highlight Folded guifg=#008787 guibg=#ffffd7 ctermfg=30 ctermbg=230
+    highlight link FoldColumn Folded
+    highlight PMenu guifg=#afff87 guibg=#767676 ctermfg=156 ctermbg=243
+    highlight link PMenuThumb PMenu
+    highlight PMenuSel gui=bold guifg=#afff87 guibg=#444444 cterm=bold ctermfg=156 ctermbg=238
+    highlight PMenuSBar guifg=#dadada guibg=#444444 ctermfg=253 ctermbg=238
+    highlight VertSplit guifg=#767676 ctermfg=243
+    "}}}
+
+    "{{{-searching/spelling
+    highlight Search guifg=#000000 guibg=#ffff87 ctermfg=16 ctermbg=228
+    highlight IncSearch guifg=#000000 guibg=#d7ffaf ctermfg=16 ctermbg=193
+    highlight SpellBad gui=underline guifg=#d70000 guibg=#dadada cterm=underline ctermfg=160 ctermbg=253
+    highlight SpellCap gui=underline guifg=#005fff guibg=#dadada cterm=underline ctermfg=27 ctermbg=253
+    highlight SpellRare gui=underline guifg=#d700ff guibg=#dadada cterm=underline ctermfg=165 ctermbg=253
+    highlight SpellLocal gui=underline guifg=#8700af guibg=#dadada cterm=underline ctermfg=91 ctermbg=253
+    highlight link SyntasticError SpellBad
+    highlight link SyntasticWarning WarningMsg
+    highlight link SyntasticStyleError SyntasticError
+    highlight link SyntasticStyleWarning SyntasticWarning
+    "}}}
+
+    "{{{-vimdiff colors
+    highlight DiffAdd guifg=#d78787 guibg=#008700 ctermfg=174 ctermbg=28
+    highlight DiffChange guifg=#d78787 guibg=#005fff ctermfg=174 ctermbg=27
+    highlight DiffDelete guibg=#5f0000 ctermbg=52
+    highlight DiffText guifg=#005fff guibg=#767676 ctermfg=27 ctermbg=243
+    "}}}
+
+    "{{{-comments
+    highlight Comment guifg=#008787 ctermfg=30
+    highlight SpecialComment guifg=#5fafff ctermfg=75
+    highlight TODO gui=bold guifg=#000000 guibg=#ffff00 cterm=bold ctermfg=16 ctermbg=226
+    highlight NonText guifg=#767676 ctermfg=243
+    highlight Conceal guifg=#dadada guibg=#767676 ctermfg=253 ctermbg=243
+    "}}}
+
+    "{{{-types
+    highlight Type guifg=#00af00 ctermfg=34
+    highlight String guifg=#008700 ctermfg=28
+    highlight Character guifg=#ff0000 ctermfg=196
+    highlight Constant guifg=#ff8700 ctermfg=208
+    highlight link Boolean Constant
+    highlight Number guifg=#8700af ctermfg=91
+    highlight link Float Number
+    highlight Structure gui=bold guifg=#00af00 cterm=bold ctermfg=34
+    highlight link Typedef Structure
+    highlight StorageClass guifg=#ff8700 ctermfg=208
+    "}}}
+
+    "{{{-other programming language constructs
+    highlight Function gui=bold guifg=#5fafff cterm=bold ctermfg=75
+    highlight Keyword guifg=#ff8700 ctermfg=208
+    highlight Identifier guifg=#00af00 ctermfg=34
+    highlight Conditional gui=bold guifg=#ff8700 cterm=bold ctermfg=208
+    highlight link Repeat Conditional
+    highlight Statement guifg=#ff0000 ctermfg=196
+    highlight link Operator Function
+    highlight Debug guifg=#ffafff ctermfg=219
+    highlight Define gui=bold guifg=#5fafff cterm=bold ctermfg=75
+    highlight link Macro Define
+    highlight PreCondit gui=bold guifg=#5f87af cterm=bold ctermfg=67
+    highlight PreProc guifg=#d7005f ctermfg=161
+    highlight Exception guifg=#005fff ctermfg=27
+    "}}}
 endif
-exe "hi Cursor" . s:mfg . s:cursor . s:mbg . s:fg
-exe "hi CursorLine" . s:mbg . s:highlight
-hi link CursorColumn CursorLine
-exe "hi LineNR" . s:mfg . s:fg . s:mbg . s:highlight
-exe "hi CursorLineNR" . s:b . s:mfg . s:orange . s:mbg . s:bg
-hi link ColorColumn CursorColumn
-exe "hi Visual" . s:r
-exe "hi VisualNOS" . s:mbg . s:highlight
-exe "hi SignColumn" . s:mfg . s:lime . s:mbg . s:highlight
-exe "hi Title" . s:mfg . s:dark_orange
-exe "hi Label" . s:mfg . s:light_yellow
-exe "hi Directory" . s:mfg . s:lime
-exe "hi MatchParen" . s:b . s:mfg . s:red
-exe "hi Special" . s:mfg . s:pink
-hi link SpecialChar Special
-hi link Tag Special
-exe "hi SpecialKey" . s:mfg . s:special_key
-hi link Question SpecialKey
-exe "hi Delimiter" . s:mfg . s:light_blue
-exe "hi Underlined" . s:u
-"}}}
-
-"{{{-messages
-exe "hi Error" . s:mbg . s:bright_red
-hi link ErrorMsg Error
-exe "hi WarningMsg" . s:mfg . s:warn . s:mbg . s:highlight
-exe "hi MoreMsg" . s:mfg . s:light_grey
-hi link ModeMsg MoreMsg
-"}}}
-
-"{{{-menus/ui
-exe "hi StatusLine" . s:mfg . s:white . s:mbg . s:grey
-exe "hi StatusLineNC" . s:mfg . s:black . s:mbg . s:light_grey
-hi link Tabline LineNR
-hi link TablineSel CursorLineNR
-hi link TablineFill CursorLine
-exe "hi WildMenu" . s:mfg . s:lime . s:mbg . s:grey
-exe "hi Folded" . s:mfg . s:cyan . s:mbg . s:bg
-hi link FoldColumn Folded
-exe "hi PMenu" . s:mfg . s:light_lime . s:mbg . s:light_grey
-hi link PMenuThumb PMenu
-exe "hi PMenuSel" . s:b . s:mfg . s:light_lime . s:mbg . s:grey
-exe "hi PMenuSBar" . s:mfg . s:white . s:mbg . s:grey
-exe "hi VertSplit" . s:mfg . s:light_grey
-"}}}
-
-"{{{-searching/spelling
-exe "hi Search" . s:mfg . s:black . s:mbg . s:light_yellow
-exe "hi IncSearch" . s:mfg . s:black . s:mbg . s:pale_green
-if &background == "dark"
-    exe "hi SpellBad" . s:u . s:mfg . s:red
-    exe "hi SpellCap" . s:u . s:mfg . s:blue
-    exe "hi SpellRare" . s:u . s:mfg . s:bright_purple
-    exe "hi SpellLocal" . s:u . s:mfg . s:purple
-else
-    exe "hi SpellBad" . s:u . s:mfg . s:red . s:mbg . s:white
-    exe "hi SpellCap" . s:u . s:mfg . s:blue . s:mbg . s:white
-    exe "hi SpellRare" . s:u . s:mfg . s:bright_purple . s:mbg . s:white
-    exe "hi SpellLocal" . s:u . s:mfg . s:purple . s:mbg . s:white
-endif
-hi link SyntasticError SpellBad
-hi link SyntasticWarning WarningMsg
-hi link SyntasticStyleError SyntasticError
-hi link SyntasticStyleWarning SyntasticWarning
-"}}}
-
-"{{{-vimdiff colors
-exe "hi DiffAdd" . s:mfg . s:pale_red . s:mbg . s:green
-exe "hi DiffChange" . s:mfg . s:pale_red . s:mbg . s:blue
-exe "hi DiffDelete" . s:mbg . s:dark_red
-exe "hi DiffText" . s:mfg . s:blue . s:mbg . s:light_grey
-"}}}
-
-"{{{-comments
-exe "hi Comment" . s:mfg . s:cyan
-exe "hi SpecialComment" . s:mfg . s:light_blue
-if &background == "dark"
-    exe "hi TODO" . s:b . s:mfg . s:yellow . s:mbg . s:black
-else
-    exe "hi TODO" . s:b . s:mfg . s:black . s:mbg . s:yellow
-endif
-exe "hi NonText" . s:mfg . s:light_grey
-exe "hi Conceal" s:mfg . s:white . s:mbg . s:light_grey
-"}}}
-
-"{{{-types
-exe "hi Type" . s:mfg . s:bright_green
-exe "hi String" . s:mfg . s:green
-exe "hi Character" . s:mfg . s:bright_red
-if &background == "dark"
-    exe "hi Constant" . s:mfg . s:yellow
-else
-    exe "hi Constant" . s:mfg . s:orange
-endif
-hi link Boolean Constant
-if &background == "dark"
-    exe "hi Number" . s:mfg . s:light_purple
-else
-    exe "hi Number" . s:mfg . s:purple
-endif
-hi link Float Number
-exe "hi Structure" . s:b . s:mfg . s:bright_green
-hi link Typedef Structure
-exe "hi StorageClass" . s:mfg . s:orange
-"}}}
-
-"{{{-other programming language constructs
-exe "hi Function" . s:b . s:mfg . s:light_blue
-exe "hi Keyword" . s:mfg . s:orange
-exe "hi Identifier" . s:mfg . s:bright_green
-exe "hi Conditional" . s:b . s:mfg . s:orange
-hi link Repeat Conditional
-exe "hi Statement" . s:mfg . s:bright_red
-hi link Operator Function
-exe "hi Debug" . s:mfg . s:light_pink
-exe "hi Define" . s:b . s:mfg . s:light_blue
-hi link Macro Define
-exe "hi PreCondit" . s:b . s:mfg . s:pale_blue
-exe "hi PreProc" . s:mfg . s:pink
-exe "hi Exception" . s:mfg . s:blue
-"}}}
 "}}}===========================================================================
 
