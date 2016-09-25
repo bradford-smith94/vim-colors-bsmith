@@ -267,14 +267,42 @@ if &background == "dark"
     "}}}
 
     "{{{-comments
+    highlight Comment guifg=#008787 ctermfg=30
+    highlight SpecialComment guifg=#5fd7ff ctermfg=81
+    highlight TODO gui=bold guifg=#ffff00 guibg=#000000 cterm=bold ctermfg=226 ctermbg=16
+    highlight NonText guifg=#767676 ctermfg=243
+    highlight Conceal guifg=#dadada guibg=#767676 ctermfg=253 ctermbg=243
     "}}}
 
     "{{{-types
+    highlight Type guifg=#87d700 ctermfg=112
+    highlight String guifg=#008700 ctermfg=28
+    highlight Character guifg=#ff0000 ctermfg=196
+    highlight Constant guifg=#ffff00 ctermfg=226
+    highlight link Boolean Constant
+    highlight Number guifg=#af5faf ctermfg=133
+    highlight link Float Number
+    highlight Structure gui=bold guifg=#87d700 cterm=bold ctermfg=112
+    highlight link Typedef Structure
+    highlight StorageClass guifg=#ff8700 ctermfg=208
     "}}}
 
     "{{{-other programming language constructs
+    highlight Function gui=bold guifg=#5fd7ff cterm=bold ctermfg=81
+    highlight Keyword guifg=#ff8700 ctermfg=208
+    highlight Identifier guifg=#87d700 ctermfg=112
+    highlight Conditional gui=bold guifg=#ff8700 cterm=bold ctermfg=208
+    highlight link Repeat Conditional
+    highlight Statement guifg=#ff0000 ctermfg=196
+    highlight link Operator Function
+    highlight Debug guifg=#ffafff ctermfg=219
+    highlight Define gui=bold guifg=#5fd7ff cterm=bold ctermfg=81
+    highlight link Macro Define
+    highlight PreCondit gui=bold guifg=#5f87af cterm=bold ctermfg=67
+    highlight PreProc guifg=#d7005f ctermfg=161
+    highlight Exception guifg=#005fff ctermfg=27
     "}}}
-else
+else "&backgroung == "light"
     highlight Normal guifg=#000000 guibg=#ffffd7 ctermfg=16 ctermbg=230
 
     "{{{-vim things
@@ -345,62 +373,41 @@ else
     "}}}
 
     "{{{-comments
+    highlight Comment guifg=#008787 ctermfg=30
+    highlight SpecialComment guifg=#5fafff ctermfg=75
+    highlight TODO gui=bold guifg=#000000 guibg=#ffff00 cterm=bold ctermfg=16 ctermbg=226
+    highlight NonText guifg=#767676 ctermfg=243
+    highlight Conceal guifg=#dadada guibg=#767676 ctermfg=253 ctermbg=243
     "}}}
 
     "{{{-types
+    highlight Type guifg=#00af00 ctermfg=34
+    highlight String guifg=#008700 ctermfg=28
+    highlight Character guifg=#ff0000 ctermfg=196
+    highlight Constant guifg=#ff8700 ctermfg=208
+    highlight link Boolean Constant
+    highlight Number guifg=#8700af ctermfg=91
+    highlight link Float Number
+    highlight Structure gui=bold guifg=#00af00 cterm=bold ctermfg=34
+    highlight link Typedef Structure
+    highlight StorageClass guifg=#ff8700 ctermfg=208
     "}}}
 
     "{{{-other programming language constructs
+    highlight Function gui=bold guifg=#5fafff cterm=bold ctermfg=75
+    highlight Keyword guifg=#ff8700 ctermfg=208
+    highlight Identifier guifg=#00af00 ctermfg=34
+    highlight Conditional gui=bold guifg=#ff8700 cterm=bold ctermfg=208
+    highlight link Repeat Conditional
+    highlight Statement guifg=#ff0000 ctermfg=196
+    highlight link Operator Function
+    highlight Debug guifg=#ffafff ctermfg=219
+    highlight Define gui=bold guifg=#5fafff cterm=bold ctermfg=75
+    highlight link Macro Define
+    highlight PreCondit gui=bold guifg=#5f87af cterm=bold ctermfg=67
+    highlight PreProc guifg=#d7005f ctermfg=161
+    highlight Exception guifg=#005fff ctermfg=27
     "}}}
 endif
-
-"{{{-comments
-exe "hi Comment" . s:mfg . s:cyan
-exe "hi SpecialComment" . s:mfg . s:light_blue
-if &background == "dark"
-    exe "hi TODO" . s:b . s:mfg . s:yellow . s:mbg . s:black
-else
-    exe "hi TODO" . s:b . s:mfg . s:black . s:mbg . s:yellow
-endif
-exe "hi NonText" . s:mfg . s:light_grey
-exe "hi Conceal" s:mfg . s:white . s:mbg . s:light_grey
-"}}}
-
-"{{{-types
-exe "hi Type" . s:mfg . s:bright_green
-exe "hi String" . s:mfg . s:green
-exe "hi Character" . s:mfg . s:bright_red
-if &background == "dark"
-    exe "hi Constant" . s:mfg . s:yellow
-else
-    exe "hi Constant" . s:mfg . s:orange
-endif
-highlight link Boolean Constant
-if &background == "dark"
-    exe "hi Number" . s:mfg . s:light_purple
-else
-    exe "hi Number" . s:mfg . s:purple
-endif
-highlight link Float Number
-exe "hi Structure" . s:b . s:mfg . s:bright_green
-highlight link Typedef Structure
-exe "hi StorageClass" . s:mfg . s:orange
-"}}}
-
-"{{{-other programming language constructs
-exe "hi Function" . s:b . s:mfg . s:light_blue
-exe "hi Keyword" . s:mfg . s:orange
-exe "hi Identifier" . s:mfg . s:bright_green
-exe "hi Conditional" . s:b . s:mfg . s:orange
-highlight link Repeat Conditional
-exe "hi Statement" . s:mfg . s:bright_red
-highlight link Operator Function
-exe "hi Debug" . s:mfg . s:light_pink
-exe "hi Define" . s:b . s:mfg . s:light_blue
-highlight link Macro Define
-exe "hi PreCondit" . s:b . s:mfg . s:pale_blue
-exe "hi PreProc" . s:mfg . s:pink
-exe "hi Exception" . s:mfg . s:blue
-"}}}
 "}}}===========================================================================
 
