@@ -1,7 +1,7 @@
 " Vim colorscheme file
 " Bradford Smith
 " bsmith.vim
-" updated: 09/27/2016
+" updated: 10/11/2016
 "=====================
 
 
@@ -108,7 +108,7 @@ if &background == "dark"
 
     "{{{-vim things
     highlight Cursor guifg=#dadada guibg=#d0d0d0  ctermfg=253 ctermbg=233
-    highlight CursorLine guibg=#303030 ctermbg=236
+    highlight CursorLine guibg=#404040 ctermbg=236
     highlight link CursorColumn CursorLine
     highlight LineNR guifg=#d0d0d0 guibg=#303030 ctermfg=252 ctermbg=236
     highlight CursorLineNR gui=bold guifg=#ff8700 guibg=#121212 cterm=bold ctermfg=208 ctermbg=233
