@@ -1,7 +1,7 @@
 " Vim colorscheme file
 " Bradford Smith
 " bsmith16.vim
-" updated: 06/23/2017
+" updated: 06/25/2017
 "=====================
 
 
@@ -13,7 +13,7 @@ endif
 "set the name of the colorscheme
 let g:colors_name = "bsmith8"
 
-if &t_Co < 8
+if &t_Co < 0
     let g:colors_name = ""
     syntax off
 endif
@@ -116,201 +116,201 @@ if &background == "dark"
     highlight CursorLine ctermbg=6
     highlight link CursorColumn CursorLine
     highlight LineNR ctermfg=7 ctermbg=6
-    highlight CursorLineNR cterm=bold ctermfg=208 ctermbg=233
+    highlight CursorLineNR cterm=bold ctermfg=3 ctermbg=0
     highlight link ColorColumn CursorColumn
     highlight Visual cterm=reverse
-    highlight VisualNOS ctermbg=236
-    highlight SignColumn ctermfg=118 ctermbg=236
-    highlight Title ctermfg=202
-    highlight Label ctermfg=228
-    highlight Directory ctermfg=118
-    highlight MatchParen cterm=bold ctermfg=160
-    highlight Special ctermfg=161
+    highlight VisualNOS ctermbg=0
+    highlight SignColumn ctermfg=2 ctermbg=0
+    highlight Title ctermfg=3
+    highlight Label ctermfg=3
+    highlight Directory ctermfg=2
+    highlight MatchParen cterm=bold ctermfg=1
+    highlight Special ctermfg=5
     highlight link SpecialChar Special
     highlight link Tag Special
-    highlight SpecialKey ctermfg=120
+    highlight SpecialKey ctermfg=2
     highlight link Question SpecialKey
-    highlight Delimiter ctermfg=81
+    highlight Delimiter ctermfg=6
     highlight Underlined cterm=underline
     "}}}
 
     "{{{-messages
-    highlight Error ctermbg=196
+    highlight Error ctermbg=1
     highlight link ErrorMsg Error
-    highlight WarningMsg ctermfg=226 ctermbg=236
-    highlight MoreMsg ctermfg=243
+    highlight WarningMsg ctermfg=3 ctermbg=0
+    highlight MoreMsg ctermfg=0
     highlight link ModeMsg MoreMsg
     "}}}
 
     "{{{-menus/ui
-    highlight StatusLine ctermfg=253 ctermbg=238
-    highlight StatusLineNC ctermfg=16 ctermbg=243
+    highlight StatusLine ctermfg=7 ctermbg=0
+    highlight StatusLineNC ctermfg=0 ctermbg=0
     highlight link Tabline LineNR
     highlight link TablineSel CursorLineNR
     highlight link TablineFill CursorLine
-    highlight WildMenu ctermfg=118 ctermbg=238
-    highlight Folded ctermfg=30 ctermbg=233
+    highlight WildMenu ctermfg=2 ctermbg=0
+    highlight Folded ctermfg=6 ctermbg=0
     highlight link FoldColumn Folded
-    highlight PMenu ctermfg=156 ctermbg=243
+    highlight PMenu ctermfg=2 ctermbg=0
     highlight link PMenuThumb PMenu
-    highlight PMenuSel cterm=bold ctermfg=156 ctermbg=238
-    highlight PMenuSBar ctermfg=253 ctermbg=238
-    highlight VertSplit ctermfg=243
+    highlight PMenuSel cterm=bold ctermfg=2 ctermbg=0
+    highlight PMenuSBar ctermfg=7 ctermbg=0
+    highlight VertSplit ctermfg=0
     "}}}
 
     "{{{-searching/spelling
-    highlight Search ctermfg=16 ctermbg=228
-    highlight IncSearch ctermfg=16 ctermbg=193
-    highlight SpellBad cterm=underline ctermfg=160
-    highlight SpellCap cterm=underline ctermfg=27
-    highlight SpellRare cterm=underline ctermfg=165
-    highlight SpellLocal cterm=underline ctermfg=91
+    highlight Search ctermfg=0 ctermbg=3
+    highlight IncSearch ctermfg=0 ctermbg=3
+    highlight SpellBad cterm=underline ctermfg=1
+    highlight SpellCap cterm=underline ctermfg=4
+    highlight SpellRare cterm=underline ctermfg=5
+    highlight SpellLocal cterm=underline ctermfg=5
     "}}}
 
     "{{{-vimdiff colors
-    highlight DiffAdd ctermfg=174 ctermbg=28
-    highlight DiffChange ctermfg=174 ctermbg=27
-    highlight DiffDelete ctermbg=52
-    highlight DiffText ctermfg=27 ctermbg=243
+    highlight DiffAdd ctermfg=5 ctermbg=2
+    highlight DiffChange ctermfg=5 ctermbg=4
+    highlight DiffDelete ctermbg=1
+    highlight DiffText ctermfg=4 ctermbg=0
     "}}}
 
     "{{{-comments
-    highlight Comment ctermfg=30
-    highlight SpecialComment ctermfg=81
-    highlight TODO cterm=bold ctermfg=226 ctermbg=16
-    highlight NonText ctermfg=243
-    highlight Conceal ctermfg=253 ctermbg=243
+    highlight Comment ctermfg=6
+    highlight SpecialComment ctermfg=6
+    highlight TODO cterm=bold ctermfg=3 ctermbg=0
+    highlight NonText ctermfg=0
+    highlight Conceal ctermfg=7 ctermbg=0
     "}}}
 
     "{{{-types
-    highlight Type ctermfg=112
-    highlight String ctermfg=28
-    highlight Character ctermfg=196
-    highlight Constant ctermfg=226
+    highlight Type ctermfg=2
+    highlight String ctermfg=2
+    highlight Character ctermfg=1
+    highlight Constant ctermfg=3
     highlight link Boolean Constant
-    highlight Number ctermfg=133
+    highlight Number ctermfg=5
     highlight link Float Number
-    highlight Structure cterm=bold ctermfg=112
+    highlight Structure cterm=bold ctermfg=2
     highlight link Typedef Structure
-    highlight StorageClass ctermfg=208
+    highlight StorageClass ctermfg=3
     "}}}
 
     "{{{-other programming language constructs
-    highlight Function cterm=bold ctermfg=81
-    highlight Keyword ctermfg=208
-    highlight Identifier ctermfg=112
-    highlight Conditional cterm=bold ctermfg=208
+    highlight Function cterm=bold ctermfg=6
+    highlight Keyword ctermfg=3
+    highlight Identifier ctermfg=2
+    highlight Conditional cterm=bold ctermfg=3
     highlight link Repeat Conditional
-    highlight Statement ctermfg=196
+    highlight Statement ctermfg=1
     highlight link Operator Function
-    highlight Debug ctermfg=219
-    highlight Define cterm=bold ctermfg=81
+    highlight Debug ctermfg=5
+    highlight Define cterm=bold ctermfg=6
     highlight link Macro Define
-    highlight PreCondit cterm=bold ctermfg=67
-    highlight PreProc ctermfg=161
-    highlight Exception ctermfg=27
+    highlight PreCondit cterm=bold ctermfg=6
+    highlight PreProc ctermfg=5
+    highlight Exception ctermfg=4
     "}}}
 else "&backgroung == "light"
-    highlight Normal ctermfg=16 ctermbg=230
+    highlight Normal ctermfg=0 ctermbg=7
 
     "{{{-vim things
-    highlight Cursor  ctermfg=233 ctermbg=253
-    highlight CursorLine ctermbg=253
+    highlight Cursor  ctermfg=0 ctermbg=7
+    highlight CursorLine ctermbg=7
     highlight link CursorColumn CursorLine
-    highlight LineNR ctermfg=16 ctermbg=253
-    highlight CursorLineNR cterm=bold ctermfg=208 ctermbg=230
+    highlight LineNR ctermfg=0 ctermbg=7
+    highlight CursorLineNR cterm=bold ctermfg=3 ctermbg=7
     highlight link ColorColumn CursorColumn
     highlight Visual cterm=reverse
-    highlight VisualNOS ctermbg=253
-    highlight SignColumn ctermfg=118 ctermbg=253
-    highlight Title ctermfg=202
-    highlight Label ctermfg=228
-    highlight Directory ctermfg=118
-    highlight MatchParen cterm=bold ctermfg=160
-    highlight Special ctermfg=161
+    highlight VisualNOS ctermbg=7
+    highlight SignColumn ctermfg=2 ctermbg=7
+    highlight Title ctermfg=3
+    highlight Label ctermfg=3
+    highlight Directory ctermfg=2
+    highlight MatchParen cterm=bold ctermfg=1
+    highlight Special ctermfg=5
     highlight link SpecialChar Special
     highlight link Tag Special
-    highlight SpecialKey ctermfg=34
+    highlight SpecialKey ctermfg=2
     highlight link Question SpecialKey
-    highlight Delimiter ctermfg=75
+    highlight Delimiter ctermfg=6
     highlight Underlined cterm=underline
     "}}}
 
     "{{{-messages
-    highlight Error ctermbg=196
+    highlight Error ctermbg=1
     highlight link ErrorMsg Error
-    highlight WarningMsg ctermfg=165 ctermbg=253
-    highlight MoreMsg ctermfg=243
+    highlight WarningMsg ctermfg=5 ctermbg=7
+    highlight MoreMsg ctermfg=0
     highlight link ModeMsg MoreMsg
     "}}}
 
     "{{{-menus/ui
-    highlight StatusLine ctermfg=253 ctermbg=238
-    highlight StatusLineNC ctermfg=16 ctermbg=243
+    highlight StatusLine ctermfg=7 ctermbg=0
+    highlight StatusLineNC ctermfg=0 ctermbg=0
     highlight link Tabline LineNR
     highlight link TablineSel CursorLineNR
     highlight link TablineFill CursorLine
-    highlight WildMenu ctermfg=118 ctermbg=238
-    highlight Folded ctermfg=30 ctermbg=230
+    highlight WildMenu ctermfg=2 ctermbg=0
+    highlight Folded ctermfg=6 ctermbg=7
     highlight link FoldColumn Folded
-    highlight PMenu ctermfg=156 ctermbg=243
+    highlight PMenu ctermfg=2 ctermbg=0
     highlight link PMenuThumb PMenu
-    highlight PMenuSel cterm=bold ctermfg=156 ctermbg=238
-    highlight PMenuSBar ctermfg=253 ctermbg=238
-    highlight VertSplit ctermfg=243
+    highlight PMenuSel cterm=bold ctermfg=2 ctermbg=0
+    highlight PMenuSBar ctermfg=7 ctermbg=0
+    highlight VertSplit ctermfg=0
     "}}}
 
     "{{{-searching/spelling
-    highlight Search ctermfg=16 ctermbg=228
-    highlight IncSearch ctermfg=16 ctermbg=193
-    highlight SpellBad cterm=underline ctermfg=160 ctermbg=253
-    highlight SpellCap cterm=underline ctermfg=27 ctermbg=253
-    highlight SpellRare cterm=underline ctermfg=165 ctermbg=253
-    highlight SpellLocal cterm=underline ctermfg=91 ctermbg=253
+    highlight Search ctermfg=0 ctermbg=3
+    highlight IncSearch ctermfg=0 ctermbg=3
+    highlight SpellBad cterm=underline ctermfg=1 ctermbg=7
+    highlight SpellCap cterm=underline ctermfg=4 ctermbg=7
+    highlight SpellRare cterm=underline ctermfg=5 ctermbg=7
+    highlight SpellLocal cterm=underline ctermfg=5 ctermbg=7
     "}}}
 
     "{{{-vimdiff colors
-    highlight DiffAdd ctermfg=174 ctermbg=28
-    highlight DiffChange ctermfg=174 ctermbg=27
-    highlight DiffDelete ctermbg=52
-    highlight DiffText ctermfg=27 ctermbg=243
+    highlight DiffAdd ctermfg=5 ctermbg=2
+    highlight DiffChange ctermfg=5 ctermbg=4
+    highlight DiffDelete ctermbg=1
+    highlight DiffText ctermfg=4 ctermbg=0
     "}}}
 
     "{{{-comments
-    highlight Comment ctermfg=30
-    highlight SpecialComment ctermfg=75
-    highlight TODO cterm=bold ctermfg=16 ctermbg=226
-    highlight NonText ctermfg=243
-    highlight Conceal ctermfg=253 ctermbg=243
+    highlight Comment ctermfg=6
+    highlight SpecialComment ctermfg=6
+    highlight TODO cterm=bold ctermfg=0 ctermbg=3
+    highlight NonText ctermfg=0
+    highlight Conceal ctermfg=7 ctermbg=0
     "}}}
 
     "{{{-types
-    highlight Type ctermfg=34
-    highlight String ctermfg=28
-    highlight Character ctermfg=196
-    highlight Constant ctermfg=208
+    highlight Type ctermfg=2
+    highlight String ctermfg=2
+    highlight Character ctermfg=1
+    highlight Constant ctermfg=3
     highlight link Boolean Constant
-    highlight Number ctermfg=91
+    highlight Number ctermfg=5
     highlight link Float Number
-    highlight Structure cterm=bold ctermfg=34
+    highlight Structure cterm=bold ctermfg=2
     highlight link Typedef Structure
-    highlight StorageClass ctermfg=208
+    highlight StorageClass ctermfg=3
     "}}}
 
     "{{{-other programming language constructs
-    highlight Function cterm=bold ctermfg=75
-    highlight Keyword ctermfg=208
-    highlight Identifier ctermfg=34
-    highlight Conditional cterm=bold ctermfg=208
+    highlight Function cterm=bold ctermfg=6
+    highlight Keyword ctermfg=3
+    highlight Identifier ctermfg=2
+    highlight Conditional cterm=bold ctermfg=3
     highlight link Repeat Conditional
-    highlight Statement ctermfg=196
+    highlight Statement ctermfg=1
     highlight link Operator Function
-    highlight Debug ctermfg=219
-    highlight Define cterm=bold ctermfg=75
+    highlight Debug ctermfg=5
+    highlight Define cterm=bold ctermfg=6
     highlight link Macro Define
-    highlight PreCondit cterm=bold ctermfg=67
-    highlight PreProc ctermfg=161
-    highlight Exception ctermfg=27
+    highlight PreCondit cterm=bold ctermfg=6
+    highlight PreProc ctermfg=5
+    highlight Exception ctermfg=4
     "}}}
 endif
 "}}}===========================================================================
