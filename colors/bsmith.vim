@@ -1,7 +1,7 @@
 " Vim colorscheme file
 " Bradford Smith
 " bsmith.vim
-" updated: 10/11/2016
+" updated: 06/23/2017
 "=====================
 
 
@@ -12,6 +12,16 @@ endif
 
 "set the name of the colorscheme
 let g:colors_name = "bsmith"
+
+if &t_Co < 256
+    if &t_Co == 16
+        colorscheme bsmith16
+        finish
+    elseif &t_Co == 8
+        colorscheme bsmith8
+        finish
+    endif
+endif
 "}}}===========================================================================
 
 "{{{--clear highlights manually ===============================================
