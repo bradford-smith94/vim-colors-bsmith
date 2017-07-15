@@ -1,7 +1,7 @@
 " Vim colorscheme file
 " Bradford Smith
-" bsmith16.vim
-" updated: 06/25/2017
+" bsmith8.vim
+" updated: 07/14/2017
 "=====================
 
 
@@ -13,7 +13,7 @@ endif
 "set the name of the colorscheme
 let g:colors_name = "bsmith8"
 
-if &t_Co < 0
+if &t_Co < 8
     let g:colors_name = ""
     syntax off
 endif
