@@ -1,7 +1,7 @@
 " Vim colorscheme file
 " Bradford Smith
 " bsmith.vim
-" updated: 10/02/2017
+" updated: 2020-05-23
 "=====================
 
 
@@ -92,10 +92,10 @@ if &background ==# 'dark'
     "}}}
 
     "{{{-vimdiff colors
-    highlight DiffAdd gui=NONE guifg=#d78787 guibg=#008700 cterm=NONE ctermfg=174 ctermbg=28
-    highlight DiffChange gui=NONE guifg=#d78787 guibg=#005fff cterm=NONE ctermfg=174 ctermbg=27
-    highlight DiffDelete gui=NONE guifg=NONE guibg=#5f0000 cterm=NONE ctermfg=NONE ctermbg=52
-    highlight DiffText gui=NONE guifg=#005fff guibg=#767676 cterm=NONE ctermfg=27 ctermbg=243
+    highlight DiffAdd gui=NONE guifg=#00d700 guibg=#444444 cterm=NONE ctermfg=40 ctermbg=238
+    highlight DiffChange gui=NONE guifg=#d7ff00 guibg=#444444 cterm=NONE ctermfg=190 ctermbg=238
+    highlight DiffDelete gui=NONE guifg=#d70000 guibg=#444444 cterm=NONE ctermfg=160 ctermbg=238
+    highlight DiffText gui=NONE guifg=#0087ff guibg=#444444 cterm=NONE ctermfg=33 ctermbg=238
     "}}}
 
     "{{{-comments
@@ -194,10 +194,10 @@ else "&backgroung == 'light'
     "}}}
 
     "{{{-vimdiff colors
-    highlight DiffAdd gui=NONE guifg=#d78787 guibg=#008700 cterm=NONE ctermfg=174 ctermbg=28
-    highlight DiffChange gui=NONE guifg=#d78787 guibg=#005fff cterm=NONE ctermfg=174 ctermbg=27
-    highlight DiffDelete gui=NONE guifg=NONE guibg=#5f0000 cterm=NONE ctermfg=NONE ctermbg=52
-    highlight DiffText gui=NONE guifg=#005fff guibg=#767676 cterm=NONE ctermfg=27 ctermbg=243
+    highlight DiffAdd gui=NONE guifg=#d78787 guibg=#008700 cterm=NONE ctermfg=40 ctermbg=248
+    highlight DiffChange gui=NONE guifg=#d78787 guibg=#005fff cterm=NONE ctermfg=94 ctermbg=248
+    highlight DiffDelete gui=NONE guifg=NONE guibg=#5f0000 cterm=NONE ctermfg=124 ctermbg=248
+    highlight DiffText gui=NONE guifg=#005fff guibg=#767676 cterm=NONE ctermfg=27 ctermbg=248
     "}}}
 
     "{{{-comments

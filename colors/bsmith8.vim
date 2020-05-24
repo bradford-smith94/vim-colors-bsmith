@@ -1,7 +1,7 @@
 " Vim colorscheme file
 " Bradford Smith
 " bsmith8.vim
-" updated: 10/02/2017
+" updated: 2020-05-24
 "=====================
 
 
@@ -83,10 +83,10 @@ if &background ==# 'dark'
     "}}}
 
     "{{{-vimdiff colors
-    highlight DiffAdd cterm=NONE ctermfg=5 ctermbg=2
-    highlight DiffChange cterm=NONE ctermfg=5 ctermbg=4
-    highlight DiffDelete cterm=NONE ctermfg=NONE ctermbg=1
-    highlight DiffText cterm=NONE ctermfg=4 ctermbg=0
+    highlight DiffAdd cterm=NONE ctermfg=2 ctermbg=8
+    highlight DiffChange cterm=NONE ctermfg=3 ctermbg=8
+    highlight DiffDelete cterm=NONE ctermfg=1 ctermbg=8
+    highlight DiffText cterm=NONE ctermfg=4 ctermbg=8
     "}}}
 
     "{{{-comments
@@ -185,10 +185,10 @@ else "&backgroung == 'light'
     "}}}
 
     "{{{-vimdiff colors
-    highlight DiffAdd cterm=NONE ctermfg=5 ctermbg=2
-    highlight DiffChange cterm=NONE ctermfg=5 ctermbg=4
-    highlight DiffDelete cterm=NONE ctermfg=NONE ctermbg=1
-    highlight DiffText cterm=NONE ctermfg=4 ctermbg=0
+    highlight DiffAdd cterm=NONE ctermfg=2 ctermbg=8
+    highlight DiffChange cterm=NONE ctermfg=3 ctermbg=8
+    highlight DiffDelete cterm=NONE ctermfg=1 ctermbg=8
+    highlight DiffText cterm=NONE ctermfg=4 ctermbg=8
     "}}}
 
     "{{{-comments
