@@ -1,7 +1,7 @@
 " Vim colorscheme file
 " Bradford Smith
 " bsmith.vim
-" updated: 2020-05-23
+" updated: 2021-02-11
 "=====================
 
 
@@ -103,7 +103,7 @@ if &background ==# 'dark'
     highlight SpecialComment gui=NONE guifg=#5fd7ff guibg=NONE cterm=NONE ctermfg=81 ctermbg=NONE
     highlight TODO gui=bold guifg=#ffff00 guibg=#000000 cterm=bold ctermfg=226 ctermbg=16
     highlight NonText gui=NONE guifg=#767676 guibg=NONE cterm=NONE ctermfg=243 ctermbg=NONE
-    highlight Conceal gui=NONE guifg=#dadada guibg=#767676 cterm=NONE ctermfg=253 ctermbg=243
+    highlight Conceal gui=NONE guifg=#4e4e4e guibg=NONE cterm=NONE ctermfg=239 ctermbg=NONE
     "}}}
 
     "{{{-types
@@ -205,7 +205,7 @@ else "&backgroung == 'light'
     highlight SpecialComment gui=NONE guifg=#5fafff guibg=NONE cterm=NONE ctermfg=75 ctermbg=NONE
     highlight TODO gui=bold guifg=#000000 guibg=#ffff00 cterm=bold ctermfg=16 ctermbg=226
     highlight NonText gui=NONE guifg=#767676 guibg=NONE cterm=NONE ctermfg=243 ctermbg=NONE
-    highlight Conceal gui=NONE guifg=#dadada guibg=#767676 cterm=NONE ctermfg=253 ctermbg=243
+    highlight Conceal gui=NONE guifg=#ffaf00 guibg=NONE cterm=NONE ctermfg=214 ctermbg=NONE
     "}}}
 
     "{{{-types
